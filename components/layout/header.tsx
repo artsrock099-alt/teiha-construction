@@ -126,6 +126,11 @@ function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
 
   // Close menu when clicking outside or navigating
   React.useEffect(() => {
+    if (!isOpen) return;
+
+    // Set ignore flag first
+    ignoreNextClickRef.current = true;
+
     const handleClickOutside = (e: MouseEvent) => {
       if (ignoreNextClickRef.current) {
         ignoreNextClickRef.current = false;
@@ -138,20 +143,13 @@ function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
     // Delay adding the event listener to avoid catching the click that opened the menu
     const timer = setTimeout(() => {
       document.addEventListener("click", handleClickOutside);
-    }, 0);
+    }, 50);
 
     return () => {
       clearTimeout(timer);
       document.removeEventListener("click", handleClickOutside);
     };
-  }, [onClose]);
-
-  // Set ignore flag when menu opens
-  React.useEffect(() => {
-    if (isOpen) {
-      ignoreNextClickRef.current = true;
-    }
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   React.useEffect(() => {
     onClose();

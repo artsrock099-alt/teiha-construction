@@ -22,8 +22,8 @@ export function TeamCard({
     <FadeUp delay={delay}>
       <Card hover className="h-full flex flex-col">
         <CardHeader className="pb-3">
-          <div className="relative mb-6">
-            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-muted border-2 border-border relative">
+          <div className="relative mb-8">
+            <div className={`w-32 h-32 mx-auto rounded-full overflow-hidden bg-muted border-2 border-border relative ${avatarAdjustment || ""}`}>
               <Image
                 src={avatarSrc}
                 alt={`${name} - ${position}`}
@@ -31,7 +31,7 @@ export function TeamCard({
                 className="object-cover"
               />
             </div>
-            <div className="absolute top-1 right-1/2 translate-x-1/2 -translate-y-1/2">
+            <div className="absolute top-2 right-1/2 translate-x-1/2 -translate-y-1/2">
               <Badge variant="default">{badge}</Badge>
             </div>
           </div>
