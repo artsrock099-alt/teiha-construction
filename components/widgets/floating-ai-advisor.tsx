@@ -3,17 +3,11 @@
 import React, { useState, useRef, useEffect, type KeyboardEvent } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, Sparkles, ArrowRight, MessageCircle, Briefcase, Compass, TrendingUp, Zap, BookOpen, MapPin, Users } from "lucide-react";
+import { X, Send, Sparkles, ArrowRight, MessageCircle, Briefcase, Compass, TrendingUp, Zap, BookOpen, MapPin, Users, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-
-interface ChatMessage {
-  id: string;
-  role: "user" | "assistant";
-  content: string;
-  timestamp: Date;
-}
+import type { Message } from "@/modules/ai/types/ai";
 
 const quickActions = [
   { icon: Briefcase, label: "Explore Services", href: "/services" },
@@ -31,19 +25,11 @@ const suggestedQuestions = [
   { question: "What industries do you serve?", href: "/services" },
 ];
 
-const placeholderResponses: Record<string, string> = {
-  "What services do you offer?": "We offer architectural design, construction, civil engineering, structural engineering, interior design, renovation, project management, smart building consulting, sustainable design, and construction supervision services. You can learn more about each service by visiting our Services page!",
-  "How can AI improve my project?": "AI helps us optimize project planning, provide accurate cost estimates, generate design concepts, analyze site conditions, and improve sustainability. You can explore our AI capabilities in the AI Studio!",
-  "Do you work internationally?": "Yes! We are based in Uganda and work on projects across East Africa and internationally. Please contact us to discuss your specific needs!",
-  "How do I start a project?": "Great question! The best way to get started is to book a consultation with our team. We'll discuss your requirements, answer your questions, and outline the next steps.",
-  "What industries do you serve?": "We serve residential, commercial, healthcare, education, hospitality, government, industrial, mixed-use, and infrastructure sectors. Explore our projects to see our work across these industries!",
-  "default": "Thanks for reaching out! Our AI Project Advisor is here to help. For personalized assistance, we recommend booking a consultation with our team of experts!",
-};
-
 export function FloatingAIAdvisor() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -76,7 +62,7 @@ export function FloatingAIAdvisor() {
   const addWelcomeMessage = () => {
     setMessages([
       {
-        id: Date.now().toString(),
+        id: crypto.randomUUID(),
         role: "assistant",
         content: "Hi there! I'm TEI-HA's AI Project Advisor. I can help you explore our services, view our projects, learn about our AI capabilities, or guide you toward booking a consultation. How can I assist you today?",
         timestamp: new Date(),
@@ -84,39 +70,63 @@ export function FloatingAIAdvisor() {
     ]);
   };
 
-  const handleSendMessage = (text: string) => {
-    if (!text.trim()) return;
-    const userMessageId = Date.now().toString();
-    setMessages((prev) => [
-      ...prev,
-      {
-        id: userMessageId,
-        role: "user",
-        content: text,
-        timestamp: new Date(),
-      },
-    ]);
+  const handleSendMessage = async (text: string) => {
+    if (!text.trim() || isLoading) return;
+
+    // Create user message
+    const userMessage: Message = {
+      id: crypto.randomUUID(),
+      role: "user",
+      content: text,
+      timestamp: new Date(),
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
-    // Simulate AI response
-    setTimeout(() => {
-      const lowerText = text.toLowerCase();
-      let response = placeholderResponses["default"];
-      for (const [q, a] of Object.entries(placeholderResponses)) {
-        if (lowerText.includes(q.toLowerCase().split(" ").slice(0, 3).join(" "))) {
-          response = a;
-          break;
-        }
+    setIsLoading(true);
+
+    try {
+      // Call API endpoint
+      const response = await fetch("/api/ai/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          messages: [...messages, userMessage],
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success && data.message) {
+        setMessages((prev) => [...prev, data.message]);
+      } else {
+        // Handle error case
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: crypto.randomUUID(),
+            role: "assistant",
+            content: data.error || "I'm sorry, I couldn't process your request. Please try again later.",
+            timestamp: new Date(),
+          },
+        ]);
       }
+    } catch (error) {
+      console.error("Error sending message:", error);
       setMessages((prev) => [
         ...prev,
         {
-          id: (Date.now() + 1).toString(),
+          id: crypto.randomUUID(),
           role: "assistant",
-          content: response,
+          content: "I'm sorry, something went wrong. Please try again later.",
           timestamp: new Date(),
         },
       ]);
-    }, 800);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleQuickQuestion = (q: string, href: string) => {
@@ -244,15 +254,16 @@ export function FloatingAIAdvisor() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about your project..."
-                  className="flex-1 px-4 py-3 rounded-full border border-border bg-surface focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
+                  disabled={isLoading}
+                  className="flex-1 px-4 py-3 rounded-full border border-border bg-surface focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm disabled:opacity-70 disabled:cursor-not-allowed"
                 />
                 <Button
                   type="submit"
                   size="icon"
                   className="rounded-full"
-                  disabled={!input.trim()}
+                  disabled={!input.trim() || isLoading}
                 >
-                  <Send className="h-4 w-4" />
+                  {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
                 </Button>
               </form>
             </div>
