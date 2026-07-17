@@ -6,7 +6,7 @@ const FAQS = [
   {
     question: "What services does TEI-HA offer?",
     answer:
-      "We offer comprehensive architecture, engineering, construction, interior design, renovation, and project management services, all enhanced by our AI-powered tools.",
+      "We offer comprehensive architecture, engineering, construction, interior design, renovation, and project management services.",
   },
   {
     question: "How does AI improve the construction process?",

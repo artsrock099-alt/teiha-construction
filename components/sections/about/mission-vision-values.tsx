@@ -4,29 +4,31 @@ import * as React from "react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { FeatureGrid } from "@/components/layouts/feature-grid";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlassPanel } from "@/components/ui/glass-panel";
 import { IconContainer } from "@/components/ui/icon-container";
-import { Target, Eye, Heart } from "lucide-react";
+import { Target, Eye, Compass } from "lucide-react";
 import { FadeUp } from "@/lib/animations";
+import { cn } from "@/lib/utils";
 
 export function MissionVisionValues() {
   const cards = [
     {
       icon: <Target />,
-      title: "Our Mission",
+      title: "Mission",
       description:
-        "To transform the architecture and construction industry through AI-powered innovation, delivering exceptional spaces that inspire, endure, and respect our planet.",
+        "To earn the trust of our clients through commitment and caring services.",
     },
     {
       icon: <Eye />,
-      title: "Our Vision",
+      title: "Vision",
       description:
-        "To be the global leader in AI-driven construction, setting new standards for quality, efficiency, and sustainability in every project we touch.",
+        "To provide the highest-quality workmanship possible with clarity and precision.",
     },
     {
-      icon: <Heart />,
-      title: "Core Values",
+      icon: <Compass />,
+      title: "Aim",
       description:
-        "Innovation, Excellence, Integrity, Sustainability, Collaboration, and Client Success guide everything we do.",
+        "To become a leading construction company in the global market.",
     },
   ];
 
@@ -34,16 +36,15 @@ export function MissionVisionValues() {
     <Section variant="muted">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeader
-          title="Mission, Vision & Core Values"
-          subtitle="The principles that guide every decision we make"
+          title="Mission, Vision & Aim"
           className="mb-16"
         />
         <FeatureGrid columns={3}>
           {cards.map((card, idx) => (
             <FadeUp key={card.title} delay={idx * 0.1}>
-              <Card className="h-full">
+              <GlassPanel className="h-full group cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
                 <CardHeader>
-                  <IconContainer variant="gradient" size="xl" className="mb-4">
+                  <IconContainer variant="gradient" size="xl" className="mb-4 group-hover:scale-110 transition-transform duration-300">
                     {card.icon}
                   </IconContainer>
                   <CardTitle className="text-xl">{card.title}</CardTitle>
@@ -51,7 +52,7 @@ export function MissionVisionValues() {
                 <CardContent>
                   <p className="text-body">{card.description}</p>
                 </CardContent>
-              </Card>
+              </GlassPanel>
             </FadeUp>
           ))}
         </FeatureGrid>

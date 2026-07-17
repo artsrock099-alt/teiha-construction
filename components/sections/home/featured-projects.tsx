@@ -9,29 +9,43 @@ import { Button } from "@/components/ui/button";
 
 const PROJECTS = [
   {
-    title: "Kampala Innovation Hub",
-    category: "Commercial",
+    title: "Kampala Grand Hotel",
+    category: "Hospitality",
     location: "Kampala, Uganda",
-    summary: "A modern, AI-designed commercial complex with sustainable features.",
+    summary: "Luxury hotel with modern amenities and sustainable design.",
+    imageUrl: "/tei ha pics/hospitality3.jpeg",
   },
   {
     title: "Lake Victoria Residences",
     category: "Residential",
-    location: "Entebbe, Uganda",
+    location: "Kampala, Uganda",
     summary: "Luxury residential development with smart home technology.",
+    imageUrl: "/tei ha pics/residential10.jpeg",
   },
   {
-    title: "Global Health Center",
-    category: "Healthcare",
-    location: "Nairobi, Kenya",
-    summary: "State-of-the-art healthcare facility with intelligent systems.",
+    title: "Kampala Innovation Hub",
+    category: "Commercial",
+    location: "Kampala, Uganda",
+    summary: "A modern, commercial complex with sustainable features.",
+    imageUrl: "/tei ha pics/commercial2.jpeg",
+  },
+  {
+    title: "Zembo",
+    category: "Industrial",
+    location: "Kampala, Uganda",
+    summary: "Modern industrial facility with state-of-the-art infrastructure.",
+    imageUrl: "/tei ha pics/industrial.jpeg",
   },
 ];
 
-const FILTERS = ["All", "Residential", "Commercial", "Healthcare", "Education", "Hospitality", "Industrial"];
+const FILTERS = ["All", "Residential", "Commercial", "Hospitality", "Industrial"];
 
 export function FeaturedProjects() {
   const [activeFilter, setActiveFilter] = React.useState("All");
+
+  const filteredProjects = activeFilter === "All" 
+    ? PROJECTS 
+    : PROJECTS.filter(project => project.category === activeFilter);
 
   return (
     <Section size="xl">
@@ -57,13 +71,14 @@ export function FeaturedProjects() {
           ))}
         </div>
         <FeatureGrid columns={3}>
-          {PROJECTS.map((project, idx) => (
+          {filteredProjects.map((project, idx) => (
             <ProjectCard
               key={project.title}
               title={project.title}
               category={project.category}
               location={project.location}
               summary={project.summary}
+              imageUrl={project.imageUrl}
               delay={idx * 0.1}
             />
           ))}

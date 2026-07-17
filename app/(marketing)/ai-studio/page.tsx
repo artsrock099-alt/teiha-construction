@@ -103,16 +103,15 @@ export default function AIStudioPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-muted/50">
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <Breadcrumb className="mb-8" />
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6">
               TEI-HA AI Studio
             </h1>
-            <p className="text-lg md:text-xl text-body mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-body mb-8 max-w-2xl mx-auto">
               AI-powered tools to help you make better construction decisions. Our AI supports our experts,
               so you get better results, faster.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/contact">Book Consultation</Link>
               </Button>

@@ -88,6 +88,34 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
 
   const internalOnSubmit = (data: ContactFormValues) => {
     console.log("Form submitted:", data);
+    
+    // Format message for WhatsApp
+    const message = `
+*New Consultation Request*
+
+*Personal Information:*
+- Full Name: ${data.fullName}
+- Company: ${data.company || "N/A"}
+- Email: ${data.email}
+- Phone: ${data.phone || "N/A"}
+- Country: ${data.country}
+
+*Project Details:*
+- Project Type: ${data.projectType}
+- Estimated Budget: ${data.estimatedBudget}
+- Preferred Consultation Method: ${data.preferredConsultationMethod}
+- Project Location: ${data.projectLocation}
+- Desired Timeline: ${data.desiredTimeline || "N/A"}
+- Preferred Contact Date: ${data.preferredContactDate || "N/A"}
+- Project Description: ${data.projectDescription}
+    `.trim();
+    
+    // WhatsApp URL
+    const whatsappUrl = `https://wa.me/256741190078?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, "_blank");
+    
     onSubmit?.(data);
   };
 
@@ -107,7 +135,7 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
                   id="fullName"
                   type="text"
                   className="w-full p-3 border border-border rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  placeholder="John Doe"
+                  placeholder="Alvin Tendo"
                   {...register("fullName")}
                 />
                 {errors.fullName && (
@@ -134,7 +162,7 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
                   id="email"
                   type="email"
                   className="w-full p-3 border border-border rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  placeholder="john@example.com"
+                  placeholder="alvin@example.com"
                   {...register("email")}
                 />
                 {errors.email && (
@@ -285,30 +313,19 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
             </div>
           </div>
 
-          {/* File Upload & Preferences */}
+          {/* Preferences */}
           <div>
             <h3 className="text-xl font-semibold text-heading mb-6">Additional Details</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label htmlFor="preferredContactDate" className="text-sm font-medium text-heading">
-                  Preferred Contact Date (Optional)
-                </label>
-                <input
-                  id="preferredContactDate"
-                  type="date"
-                  className="w-full p-3 border border-border rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  {...register("preferredContactDate")}
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-heading">
-                  File Upload (Coming Soon)
-                </label>
-                <div className="flex items-center justify-center p-6 border border-dashed border-border rounded-lg bg-muted/30">
-                  <Upload className="h-8 w-8 text-muted-foreground mr-3" />
-                  <span className="text-muted-foreground">Drag and drop files here or click to browse</span>
-                </div>
-              </div>
+            <div className="space-y-2">
+              <label htmlFor="preferredContactDate" className="text-sm font-medium text-heading">
+                Preferred Contact Date (Optional)
+              </label>
+              <input
+                id="preferredContactDate"
+                type="date"
+                className="w-full p-3 border border-border rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/50"
+                {...register("preferredContactDate")}
+              />
             </div>
           </div>
 

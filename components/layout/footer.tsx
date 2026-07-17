@@ -1,8 +1,9 @@
+"use client";
 import * as React from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { X, Mail, Phone, MapPin, Globe, Users } from "lucide-react";
+import { Mail, Phone, MapPin, PlayCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Footer() {
@@ -59,14 +60,8 @@ export function Footer() {
               AI-powered architecture and construction services based in Uganda, serving clients worldwide.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-white/80 transition-colors">
-                <X className="h-4.5 w-4.5 md:h-5 md:w-5" />
-              </a>
-              <a href="#" className="hover:text-white/80 transition-colors">
-                <Globe className="h-4.5 w-4.5 md:h-5 md:w-5" />
-              </a>
-              <a href="#" className="hover:text-white/80 transition-colors">
-                <Users className="h-4.5 w-4.5 md:h-5 md:w-5" />
+              <a href="https://www.youtube.com/@Tei-haConstructionServices" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors text-red-600">
+                <PlayCircle className="h-4.5 w-4.5 md:h-5 md:w-5" />
               </a>
             </div>
           </div>
@@ -74,7 +69,7 @@ export function Footer() {
           {/* Quick Links */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4">{section.title}</h4>
+              <h4 className={`text-base md:text-lg font-semibold mb-3 md:mb-4`} style={{ color: "#d4a017" }}>{section.title}</h4>
               <ul className="space-y-1.5 md:space-y-2">
                 {section.links.map((link) => (
                   <li key={link.name}>
@@ -95,7 +90,7 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8 md:pt-10 pb-6 md:pb-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
           {/* Newsletter */}
           <div>
-            <h4 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Stay Updated</h4>
+            <h4 className="text-base md:text-lg font-semibold mb-2 md:mb-3" style={{ color: "#d4a017" }}>Stay Updated</h4>
             <p className="text-sm md:text-base text-white/70 mb-4">
               Get the latest news and updates from TEI-HA
             </p>
@@ -112,28 +107,49 @@ export function Footer() {
           {/* Contact Info */}
           <div className="space-y-3 md:space-y-4">
             <div className="flex items-start gap-3">
-              <MapPin className="h-4.5 w-4.5 md:h-5 md:w-5 text-accent mt-0.5" />
+              <Phone className="h-4.5 w-4.5 md:h-5 md:w-5 text-accent mt-0.5" />
               <div>
-                <p className="font-medium text-sm md:text-base">Office Location</p>
-                <p className="text-sm md:text-base text-white/70">Kampala, Uganda</p>
+                <p className="font-medium text-sm md:text-base">WhatsApp</p>
+                <a href="https://wa.me/256741190078" className="text-sm md:text-base text-white/70 hover:text-white">
+                  +256-741190078
+                </a>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <Mail className="h-4.5 w-4.5 md:h-5 md:w-5 text-accent" />
+            <div className="flex items-start gap-3">
+              <Phone className="h-4.5 w-4.5 md:h-5 md:w-5 text-accent mt-0.5" />
+              <div>
+                <p className="font-medium text-sm md:text-base">Phone Number</p>
+                <a href="tel:+256200911184" className="text-sm md:text-base text-white/70 hover:text-white">
+                  +256 200911184
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Mail className="h-4.5 w-4.5 md:h-5 md:w-5 text-accent mt-0.5" />
               <div>
                 <p className="font-medium text-sm md:text-base">Email</p>
-                <a href="mailto:info@teiha.com" className="text-sm md:text-base text-white/70 hover:text-white">
-                  info@teiha.com
+                <a href="mailto:teihaconstructionservices@gmail.com" className="text-sm md:text-base text-white/70 hover:text-white">
+                  teihaconstructionservices@gmail.com
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <Phone className="h-4.5 w-4.5 md:h-5 md:w-5 text-accent" />
+            <div className="flex items-start gap-3">
+              <div className="h-4.5 w-4.5 md:h-5 md:w-5 text-accent mt-0.5" />
               <div>
-                <p className="font-medium text-sm md:text-base">Phone</p>
-                <a href="tel:+256700000000" className="text-sm md:text-base text-white/70 hover:text-white">
-                  +256 700 000 000
-                </a>
+                <p className="font-medium text-sm md:text-base">Business Details</p>
+                <p className="text-sm md:text-base text-white/70">TIN: 1047520346</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <MapPin className="h-4.5 w-4.5 md:h-5 md:w-5 text-accent mt-0.5" />
+              <div>
+                <p className="font-medium text-sm md:text-base">Location</p>
+                <p className="text-sm md:text-base text-white/70">
+                  Nansana Municipality, Hoima Rd, Kabumbi Rd; Nansana Eastern Ring Rd; East 1B
+                </p>
+                <p className="text-sm md:text-base text-white/70">
+                  P. O. Box 115420, Wakiso
+                </p>
               </div>
             </div>
           </div>

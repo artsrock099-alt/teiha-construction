@@ -5,12 +5,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Section, SectionHeader } from "@/components/ui/section";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { PROJECTS, PROJECT_CATEGORIES } from "@/lib/constants/projects";
 import { FadeUp } from "@/lib/animations";
-import { ArrowRight } from "lucide-react";
 
 const DESIGN_PHILOSOPHY = [
   { title: "Innovation", description: "Pushing boundaries with AI-assisted design and cutting-edge technologies" },
@@ -44,14 +42,22 @@ export default function ProjectsPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-muted/50" />
+        <video 
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/tei ha pics/vidd.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-blue-800/60" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <Breadcrumb className="mb-8" />
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6">
+          <div className="max-w-4xl text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg mb-6">
               Our Projects
             </h1>
-            <p className="text-lg md:text-xl text-body mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               A showcase of our work, demonstrating our commitment to innovation, sustainability, and design excellence across East Africa and beyond.
             </p>
             <Button size="lg" asChild>
@@ -104,9 +110,6 @@ export default function ProjectsPage() {
                     </CardHeader>
                     <CardContent className="pt-0">
                       <p className="text-sm text-body mb-4 line-clamp-2">{project.description}</p>
-                      <div className="flex items-center gap-2 text-primary font-medium">
-                        View Project <ArrowRight className="h-4 w-4" />
-                      </div>
                     </CardContent>
                   </Card>
                 </Link>

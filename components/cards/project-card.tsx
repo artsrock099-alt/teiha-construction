@@ -1,9 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { FadeUp } from "@/lib/animations";
 
@@ -13,7 +12,6 @@ interface ProjectCardProps {
   location: string;
   summary: string;
   imageUrl?: string;
-  ctaHref?: string;
   delay?: number;
 }
 
@@ -22,14 +20,25 @@ export function ProjectCard({
   category,
   location,
   summary,
-  ctaHref = "/projects",
+  imageUrl,
   delay = 0,
 }: ProjectCardProps) {
   return (
     <FadeUp delay={delay}>
       <Card hover className="overflow-hidden">
-        <div className="aspect-video bg-muted flex items-center justify-center">
-          <p className="text-muted-foreground">Project Image</p>
+        <div className="aspect-video relative bg-muted">
+          {imageUrl ? (
+            <Image
+              src={imageUrl}
+              alt={title}
+              fill
+              className="object-cover"
+            />
+          ) : (
+            <div className="flex items-center justify-center h-full">
+              <p className="text-muted-foreground">Project Image</p>
+            </div>
+          )}
         </div>
         <CardHeader>
           <div className="flex items-center gap-2 mb-2">
@@ -39,10 +48,7 @@ export function ProjectCard({
           <h3 className="text-xl font-semibold">{title}</h3>
         </CardHeader>
         <CardContent>
-          <p className="text-body mb-4">{summary}</p>
-          <Button variant="ghost" className="px-0" asChild>
-            <Link href={ctaHref}>View Project →</Link>
-          </Button>
+          <p className="text-body">{summary}</p>
         </CardContent>
       </Card>
     </FadeUp>

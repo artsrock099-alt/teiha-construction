@@ -15,7 +15,7 @@ const NAV_LINKS = [
   { name: "Services", href: "/services", hasMegaMenu: true },
   { name: "Projects", href: "/projects" },
   { name: "AI Studio", href: "/ai-studio" },
-  { name: "Blog", href: "/blog" },
+  // { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -24,6 +24,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = React.useState(false);
+  
   const handleCloseMobileMenu = React.useCallback(() => setIsMobileMenuOpen(false), []);
 
   // Handle scroll effect
@@ -123,6 +124,7 @@ function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
   const pathname = usePathname();
   const [isServicesOpen, setIsServicesOpen] = React.useState(false);
   const ignoreNextClickRef = React.useRef(false);
+  const previousPathnameRef = React.useRef(pathname);
 
   // Close menu when clicking outside or navigating
   React.useEffect(() => {
@@ -152,7 +154,11 @@ function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
   }, [isOpen, onClose]);
 
   React.useEffect(() => {
-    onClose();
+    // Only close when pathname changes after initial mount
+    if (previousPathnameRef.current !== pathname) {
+      onClose();
+    }
+    previousPathnameRef.current = pathname;
   }, [pathname, onClose]);
 
   // Close on escape key
@@ -167,7 +173,7 @@ function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
   }, [onClose]);
 
   return (
-    <div id="mobile-nav" className="md:hidden bg-white border-t border-border">
+    <div id="mobile-nav" className="lg:hidden bg-white border-t border-border absolute top-full left-0 right-0 shadow-xl z-50">
       <div className="container mx-auto px-6 py-4 space-y-2">
         {NAV_LINKS.map((link) => (
           <div key={link.name} className="py-2">

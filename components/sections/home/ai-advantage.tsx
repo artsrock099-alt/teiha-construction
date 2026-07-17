@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { FeatureGrid } from "@/components/layouts/feature-grid";
 import { Button } from "@/components/ui/button";
@@ -52,8 +53,14 @@ export function AIAdvantage() {
               align="left"
             />
           </div>
-          <div className="rounded-2xl border border-border bg-surface aspect-video flex items-center justify-center">
-            <p className="text-muted-foreground">AI Illustration Placeholder</p>
+          <div className="rounded-2xl border border-border bg-surface aspect-video relative overflow-hidden">
+            <Image
+              src="/tei ha pics/ai-illustration.png"
+              alt="AI Illustration"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
         <FeatureGrid columns={3}>

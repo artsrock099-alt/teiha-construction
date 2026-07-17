@@ -45,17 +45,25 @@ export default function ServicesPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-muted/50" />
+        <video 
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/tei ha pics/services-hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-blue-800/60" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <Breadcrumb className="mb-8" />
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6">
+          <div className="max-w-4xl text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg mb-6">
               Our Services
             </h1>
-            <p className="text-lg md:text-xl text-body mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Comprehensive architecture, engineering, and construction services powered by AI innovation, delivering international quality standards to Uganda and beyond.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="/contact">Book Consultation</Link>
               </Button>
@@ -92,7 +100,7 @@ export default function ServicesPage() {
                         <p className="text-sm md:text-base text-body mb-4">
                           {service.shortDescription}
                         </p>
-                        <ul className="space-y-2 mb-6">
+                        <ul className="space-y-2 mb-0">
                           {service.benefits.slice(0, 3).map((benefit, idx) => (
                             <li key={idx} className="text-sm text-body flex items-start gap-2">
                               <span className="text-primary mt-1">•</span>
@@ -100,9 +108,6 @@ export default function ServicesPage() {
                             </li>
                           ))}
                         </ul>
-                        <div className="flex items-center gap-2 text-primary font-medium">
-                          Learn More <ArrowRight className="h-4 w-4" />
-                        </div>
                       </CardContent>
                     </Card>
                   </Link>

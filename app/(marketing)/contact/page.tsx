@@ -7,6 +7,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ContactForm } from "@/components/sections/contact/contact-form";
 import { ContactOptionCard } from "@/components/sections/contact/contact-option-card";
 import { FadeUp } from "@/lib/animations";
+import { GradientBlob } from "@/components/decorative/gradient-blob";
+import { GridBackground } from "@/components/decorative/grid-background";
 import { 
   Mail, 
   Phone, 
@@ -29,25 +31,25 @@ const CONTACT_OPTIONS = [
     icon: Mail,
     title: "General Enquiries",
     description: "Have questions about our services or want to learn more? We're here to help.",
-    contactMethod: "hello@tei-ha.com",
+    contactMethod: "teihaconstructionservices@gmail.com",
   },
   {
     icon: Briefcase,
     title: "Project Consultation",
     description: "Ready to start your next project? Schedule a personalized consultation with our team.",
-    contactMethod: "projects@tei-ha.com",
+    contactMethod: "teihaconstructionservices@gmail.com",
   },
   {
     icon: Users,
     title: "Partnership Opportunities",
     description: "Interested in collaborating with TEI-HA? We'd love to explore partnerships.",
-    contactMethod: "partnerships@tei-ha.com",
+    contactMethod: "teihaconstructionservices@gmail.com",
   },
   {
     icon: Shield,
     title: "Technical Support",
     description: "For existing clients. Client portal coming soon.",
-    contactMethod: "support@tei-ha.com",
+    contactMethod: "teihaconstructionservices@gmail.com",
   },
 ];
 
@@ -110,17 +112,30 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-muted/50">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-br from-primary/5 via-primary/10 to-primary/20">
+        {/* Decorative Elements */}
+        <GridBackground className="absolute inset-0 opacity-20" />
+        <GradientBlob 
+          size="xl" 
+          className="top-0 -left-20 -rotate-45" 
+        />
+        <GradientBlob 
+          size="lg" 
+          className="bottom-0 -right-10 rotate-12" 
+          color1="#0ea5e9" 
+          color2="#8b5cf6" 
+          color3="#22c55e"
+        />
+        
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <Breadcrumb className="mb-8" />
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6">
               Let's Build Something Great Together
             </h1>
-            <p className="text-lg md:text-xl text-body mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-body mb-8">
               Ready to start your next project or have questions about our services? We're here to help. Get in touch with our team today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link href="#form">Schedule Consultation</Link>
               </Button>
@@ -190,8 +205,8 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <p className="text-sm text-body">
-                    123 Kampala Road<br />
-                    Kampala, Uganda
+                    Nansana Municipality, Hoima Rd, Kabumbi Rd; Nansana Eastern Ring Rd; East 1B<br />
+                    P. O. Box 115420, Wakiso
                   </p>
                   <Button variant="ghost" className="p-0 mt-2 h-auto text-primary">
                     Get Directions
@@ -212,8 +227,7 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-sm text-body space-y-1">
-                    <li><a href="mailto:hello@tei-ha.com">hello@tei-ha.com</a></li>
-                    <li><a href="mailto:projects@tei-ha.com">projects@tei-ha.com</a></li>
+                    <li><a href="mailto:teihaconstructionservices@gmail.com">teihaconstructionservices@gmail.com</a></li>
                   </ul>
                 </CardContent>
               </Card>
@@ -231,51 +245,28 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="text-sm text-body space-y-1">
-                    <li><a href="tel:+256414123456">+256 414 123 456</a></li>
-                    <li><a href="tel:+256772123456">+256 772 123 456</a></li>
+                    <li><a href="https://wa.me/256741190078">WhatsApp: +256-741190078</a></li>
+                    <li><a href="tel:+256200911184">Phone: +256 200911184</a></li>
                   </ul>
                 </CardContent>
               </Card>
             </FadeUp>
 
-            <FadeUp delay={0.15} className="md:col-span-2 lg:col-span-3">
+            <FadeUp delay={0.15}>
               <Card className="h-full">
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
                     <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Clock className="h-6 w-6 text-primary" />
+                      <div className="h-6 w-6 text-primary font-bold">ID</div>
                     </div>
-                    <CardTitle className="text-lg">Business Hours</CardTitle>
+                    <CardTitle className="text-lg">Business Details</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-sm font-semibold text-heading mb-1">Monday - Friday</p>
-                      <p className="text-sm text-body">9:00 AM - 6:00 PM (EAT)</p>
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-heading mb-1">Saturday</p>
-                      <p className="text-sm text-body">10:00 AM - 2:00 PM (EAT)</p>
-                    </div>
-                  </div>
+                  <p className="text-sm text-body">TIN: 1047520346</p>
                 </CardContent>
               </Card>
             </FadeUp>
-          </div>
-        </div>
-      </Section>
-
-      {/* Interactive Map Placeholder */}
-      <Section size="xl" variant="muted">
-        <div className="container mx-auto px-6">
-          <div className="rounded-xl overflow-hidden bg-muted/30 aspect-video flex items-center justify-center">
-            <div className="text-center p-6">
-              <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-heading mb-2">Interactive Map Coming Soon</h3>
-              <p className="text-sm text-body mb-4">123 Kampala Road, Kampala, Uganda</p>
-              <Button variant="ghost" className="text-primary">Get Directions</Button>
-            </div>
           </div>
         </div>
       </Section>

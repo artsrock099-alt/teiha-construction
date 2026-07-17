@@ -9,9 +9,10 @@ import { cn } from "@/lib/utils";
 interface BreadcrumbProps {
   className?: string;
   homeName?: string;
+  hideText?: boolean;
 }
 
-export function Breadcrumb({ className, homeName = "Home" }: BreadcrumbProps) {
+export function Breadcrumb({ className, homeName = "Home", hideText = false }: BreadcrumbProps) {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter(Boolean);
 
@@ -30,7 +31,7 @@ export function Breadcrumb({ className, homeName = "Home" }: BreadcrumbProps) {
             className="flex items-center gap-1 hover:text-primary transition-colors"
           >
             <Home className="h-4 w-4" />
-            <span className="hidden sm:inline">{homeName}</span>
+            {!hideText && <span className="hidden sm:inline">{homeName}</span>}
           </Link>
         </li>
         {pathSegments.map((segment, index) => {
@@ -40,9 +41,9 @@ export function Breadcrumb({ className, homeName = "Home" }: BreadcrumbProps) {
             <li key={href} className="flex items-center gap-2">
               <ChevronRight className="h-4 w-4" />
               {isLast ? (
-                <span className="text-primary font-medium">{formatSegment(segment)}</span>
+                !hideText && <span className="text-primary font-medium">{formatSegment(segment)}</span>
               ) : (
-                <Link href={href} className="hover:text-primary transition-colors">
+                !hideText && <Link href={href} className="hover:text-primary transition-colors">
                   {formatSegment(segment)}
                 </Link>
               )}

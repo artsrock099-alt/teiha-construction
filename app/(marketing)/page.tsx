@@ -10,7 +10,7 @@ import { WhyChooseTeiha } from "@/components/sections/home/why-choose";
 import { ConstructionProcess } from "@/components/sections/home/construction-process";
 import { Sustainability } from "@/components/sections/home/sustainability";
 import { Testimonials } from "@/components/sections/home/testimonials";
-import { LatestInsights } from "@/components/sections/home/latest-insights";
+// import { LatestInsights } from "@/components/sections/home/latest-insights";
 import { Statistics } from "@/components/sections/home/statistics";
 import { FAQ } from "@/components/sections/home/faq";
 import { Newsletter } from "@/components/sections/home/newsletter";
@@ -33,7 +33,7 @@ export default function Home() {
       <Sustainability />
       <Statistics />
       <Testimonials />
-      <LatestInsights />
+      {/* <LatestInsights /> */}
       <FAQ />
       <Newsletter />
       <FinalCTA />

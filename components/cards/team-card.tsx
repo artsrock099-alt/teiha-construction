@@ -3,21 +3,20 @@
 import * as React from "react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { FadeUp } from "@/lib/animations";
 
 interface TeamCardProps {
   name: string;
   position: string;
   bio: string;
-  badge: string;
   avatarSrc: string;
-  avatarAdjustment?: string; // Optional CSS for avatar adjustments
+  avatarAdjustment?: string; // Optional CSS for avatar container
+  imageStyle?: React.CSSProperties; // Optional inline styles for the image itself
   delay?: number;
 }
 
 export function TeamCard({
-  name, position, bio, badge, avatarSrc, avatarAdjustment, delay = 0 }: TeamCardProps) {
+  name, position, bio, avatarSrc, avatarAdjustment, imageStyle, delay = 0 }: TeamCardProps) {
   return (
     <FadeUp delay={delay}>
       <Card hover className="h-full flex flex-col">
@@ -29,10 +28,8 @@ export function TeamCard({
                 alt={`${name} - ${position}`}
                 fill
                 className="object-cover"
+                style={imageStyle}
               />
-            </div>
-            <div className="absolute top-2 right-1/2 translate-x-1/2 -translate-y-1/2">
-              <Badge variant="default">{badge}</Badge>
             </div>
           </div>
           <div className="text-center">
