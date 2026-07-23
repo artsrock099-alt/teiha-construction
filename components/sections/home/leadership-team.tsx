@@ -35,7 +35,7 @@ const TEAM_MEMBERS = [
   {
     name: "Ocatre Norman",
     position: "Company Project Manager",
-    bio: "Expert with 19+ years of experience, Norman leads our project management efforts, ensuring every initiative is delivered on time, within budget, and to the highest standards.",
+    bio: "Expert with 19 years of experience in civil engineering and construction project management, Norman oversees the planning, coordination, and execution of projects from concept to completion. His expertise ensures every project is delivered safely, on schedule, within budget, and to the highest standards of quality.",
     avatarSrc: "/tei ha pics/Ocatre Norman.jpg",
     imageStyle: { objectPosition: "center calc(50% + 10px)" } // Move image down by 2px
   }

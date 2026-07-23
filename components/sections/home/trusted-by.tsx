@@ -13,6 +13,18 @@ const COMPANY_LOGOS = [
     name: "Zembo",
     src: "/tei ha pics/zembo.jpeg",
   },
+  {
+    name: "Partner",
+    src: "/tei ha/Partner.jpeg",
+  },
+  {
+    name: "Partner 1",
+    src: "/tei ha/Partner1.jpeg",
+  },
+  {
+    name: "Partner 3",
+    src: "/tei ha/Partner3.jpeg",
+  },
 ];
 
 export function TrustedBy() {
@@ -25,7 +37,7 @@ export function TrustedBy() {
           </p>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 max-w-6xl mx-auto">
           {COMPANY_LOGOS.map((logo, idx) => (
             <FadeUp
               key={logo.name}

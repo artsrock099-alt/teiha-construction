@@ -205,7 +205,7 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <p className="text-sm text-body">
-                    Nansana Municipality, Hoima Rd, Kabumbi Rd; Nansana Eastern Ring Rd; East 1B<br />
+                     Nansana Municipality along Hoima Rd DT Complex<br />
                     P. O. Box 115420, Wakiso
                   </p>
                   <Button variant="ghost" className="p-0 mt-2 h-auto text-primary">

@@ -27,7 +27,6 @@ export function Hero() {
   const trustMetrics = [
     { label: "Projects Completed", value: 200, suffix: "+" },
     { label: "Years Experience", value: 15, suffix: "+" },
-    { label: "Countries Served", value: 20, suffix: "+" },
     { label: "Client Satisfaction", value: 98, suffix: "%" },
   ];
 
@@ -97,7 +96,7 @@ export function Hero() {
           </FadeUp>
 
           {/* Trust Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto mb-12 md:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto mb-12 md:mb-16">
             {trustMetrics.map((metric, idx) => (
               <FadeUp key={metric.label} delay={idx * 0.1} className="text-center">
                 <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-1 text-white"

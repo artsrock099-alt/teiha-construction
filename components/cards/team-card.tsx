@@ -4,6 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { FadeUp } from "@/lib/animations";
+import { Button } from "@/components/ui/button";
 
 interface TeamCardProps {
   name: string;
@@ -17,6 +18,8 @@ interface TeamCardProps {
 
 export function TeamCard({
   name, position, bio, avatarSrc, avatarAdjustment, imageStyle, delay = 0 }: TeamCardProps) {
+  const [isExpanded, setIsExpanded] = React.useState(false);
+  
   return (
     <FadeUp delay={delay}>
       <Card hover className="h-full flex flex-col">
@@ -37,8 +40,18 @@ export function TeamCard({
             <p className="text-sm md:text-base text-primary font-medium mb-3">{position}</p>
           </div>
         </CardHeader>
-        <CardContent className="pt-0 flex-grow">
-          <p className="text-sm md:text-base text-body text-center">{bio}</p>
+        <CardContent className="pt-0 flex-grow flex flex-col">
+          <p className={`text-sm md:text-base text-body text-center ${!isExpanded ? "line-clamp-3" : ""}`}>
+            {bio}
+          </p>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="mt-2 mx-auto w-fit text-primary hover:text-primary/80"
+          >
+            {isExpanded ? "Read Less" : "Read More"}
+          </Button>
         </CardContent>
       </Card>
     </FadeUp>

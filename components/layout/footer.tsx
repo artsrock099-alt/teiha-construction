@@ -145,7 +145,7 @@ export function Footer() {
               <div>
                 <p className="font-medium text-sm md:text-base">Location</p>
                 <p className="text-sm md:text-base text-white/70">
-                  Nansana Municipality, Hoima Rd, Kabumbi Rd; Nansana Eastern Ring Rd; East 1B
+                   Nansana Municipality along Hoima Rd DT Complex
                 </p>
                 <p className="text-sm md:text-base text-white/70">
                   P. O. Box 115420, Wakiso

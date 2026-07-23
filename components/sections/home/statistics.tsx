@@ -18,12 +18,6 @@ const STATS = [
     label: "Happy Clients",
   },
   {
-    icon: <Globe />,
-    value: 20,
-    suffix: "+",
-    label: "Countries Served",
-  },
-  {
     icon: <TrendingUp />,
     value: 15,
     suffix: "+ Years",
@@ -40,7 +34,7 @@ export function Statistics() {
           subtitle="Our track record speaks for itself."
           className="mb-12"
         />
-        <FeatureGrid columns={4}>
+        <FeatureGrid columns={3}>
           {STATS.map((stat, idx) => (
             <StatisticCard
               key={stat.label}

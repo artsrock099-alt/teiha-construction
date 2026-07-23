@@ -27,12 +27,6 @@ export function CompanyStats() {
       label: "Professionals",
     },
     {
-      icon: <Globe />,
-      value: 20,
-      suffix: "+",
-      label: "Countries Served",
-    },
-    {
       icon: <Award />,
       value: 98,
       suffix: "%",
@@ -48,7 +42,7 @@ export function CompanyStats() {
           subtitle="Our track record of excellence"
           className="mb-16"
         />
-        <FeatureGrid columns={5}>
+        <FeatureGrid columns={4}>
           {stats.map((stat, idx) => (
             <StatisticCard
               key={stat.label}

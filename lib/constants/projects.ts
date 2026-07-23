@@ -1,3 +1,17 @@
+export interface ConstructionMilestone {
+  title: string;
+  description: string;
+  image: string;
+  video?: string;
+}
+
+export interface ProjectVideo {
+  title: string;
+  thumbnail: string;
+  src: string;
+  duration?: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -7,598 +21,552 @@ export interface Project {
   client: string;
   status: string;
   year: number;
-  description: string;
   heroImage: string;
+  heroVideo?: string;
+  description: string;
+  clientVision: string;
+  theChallenge: string;
+  ourSolution: string;
+  designJourney: string;
+  projectOutcome: string;
   gallery: string[];
+  videos: ProjectVideo[];
+  constructionMilestones: ConstructionMilestone[];
   servicesUsed: string[];
-  industry: string;
-  projectSize: string;
-  duration: string;
-  designChallenges: string;
-  designSolution: string;
-  aiContribution: {
-    title: string;
-    description: string;
-  }[];
+  aiContribution: { title: string; description: string }[];
   technologies: string[];
-  sustainabilityHighlights: {
-    title: string;
-    value: string;
-  }[];
-  projectStats: {
-    label: string;
-    value: number;
-    suffix?: string;
-  }[];
-  testimonial: {
-    quote: string;
-    author: string;
-    role: string;
-  };
+  sustainabilityHighlights: { title: string; value: string }[];
+  projectStats: { label: string; value: number; suffix?: string }[];
+  testimonial: { quote: string; author: string; role: string };
   relatedProjects: string[];
-  seo: {
-    title: string;
-    description: string;
-    keywords: string[];
-  };
+  seo: { title: string; description: string; keywords: string[] };
 }
 
 export const PROJECTS: Project[] = [
-  // Residential
   {
-    id: "r1",
-    slug: "residential-project-1",
-    title: "Residential Project 1",
-    category: "Residential",
-    location: "Kampala, Uganda",
-    client: "Private Client",
-    status: "Completed",
-    year: 2024,
-    description: "Elegant residential development with modern design and sustainable features.",
-    heroImage: "/tei ha pics/residentail6.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Construction"],
-    industry: "Residential",
-    projectSize: "2,000 m²",
-    duration: "12 months",
-    designChallenges: "Optimizing space for family living while maintaining aesthetic appeal.",
-    designSolution: "Open floor plan with natural light and smart storage solutions.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "r2",
-    slug: "residential-project-2",
-    title: "Residential Project 2",
-    category: "Residential",
-    location: "Kampala, Uganda",
-    client: "Private Client",
-    status: "Completed",
-    year: 2023,
-    description: "Modern residential complex with premium amenities.",
-    heroImage: "/tei ha pics/residential.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Construction"],
-    industry: "Residential",
-    projectSize: "3,500 m²",
-    duration: "18 months",
-    designChallenges: "Creating a harmonious design within a tight urban lot.",
-    designSolution: "Vertical design with rooftop gardens and communal spaces.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "r3",
-    slug: "residential-project-3",
-    title: "Residential Project 3",
-    category: "Residential",
-    location: "Kampala, Uganda",
-    client: "Private Client",
-    status: "Completed",
-    year: 2023,
-    description: "Luxury residential project with contemporary finishes.",
-    heroImage: "/tei ha pics/residential1.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Construction"],
-    industry: "Residential",
-    projectSize: "2,800 m²",
-    duration: "15 months",
-    designChallenges: "Balancing luxury with functional living spaces.",
-    designSolution: "High-end materials combined with practical design elements.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "r4",
-    slug: "residential-project-4",
-    title: "Residential Project 4",
-    category: "Residential",
-    location: "Kampala, Uganda",
-    client: "Private Client",
-    status: "Completed",
-    year: 2022,
-    description: "Stylish residential development with modern architecture.",
-    heroImage: "/tei ha pics/residential3.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Construction"],
-    industry: "Residential",
-    projectSize: "4,200 m²",
-    duration: "20 months",
-    designChallenges: "Integrating green spaces into the urban environment.",
-    designSolution: "Courtyard gardens and vertical greenery.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "r5",
-    slug: "residential-project-5",
-    title: "Residential Project 5",
-    category: "Residential",
-    location: "Kampala, Uganda",
-    client: "Private Client",
-    status: "Completed",
-    year: 2022,
-    description: "Premium residential project with top-notch facilities.",
-    heroImage: "/tei ha pics/residential11.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Construction"],
-    industry: "Residential",
-    projectSize: "3,000 m²",
-    duration: "16 months",
-    designChallenges: "Ensuring privacy while fostering community.",
-    designSolution: "Clustered units with shared amenities.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "r6",
-    slug: "residential-project-6",
-    title: "Residential Project 6",
-    category: "Residential",
-    location: "Kampala, Uganda",
-    client: "Private Client",
-    status: "Completed",
-    year: 2021,
-    description: "Elegant residential development with timeless design.",
-    heroImage: "/tei ha pics/residential9.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Construction"],
-    industry: "Residential",
-    projectSize: "2,500 m²",
-    duration: "14 months",
-    designChallenges: "Creating a design that ages gracefully.",
-    designSolution: "Classic architectural elements with modern amenities.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "r7",
-    slug: "residential-project-7",
-    title: "Residential Project 7",
-    category: "Residential",
-    location: "Kampala, Uganda",
-    client: "Private Client",
-    status: "Completed",
-    year: 2021,
-    description: "Modern residential project with smart home features.",
-    heroImage: "/tei ha pics/residential5.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Construction"],
-    industry: "Residential",
-    projectSize: "3,800 m²",
-    duration: "18 months",
-    designChallenges: "Integrating smart technology seamlessly.",
-    designSolution: "Pre-wired infrastructure and user-friendly interfaces.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-
-  // Hospitality
-  {
-    id: "h1",
-    slug: "hospitality-project-1",
-    title: "Hospitality Project 1",
-    category: "Hospitality",
-    location: "Kampala, Uganda",
-    client: "Hospitality Group",
-    status: "Completed",
-    year: 2024,
-    description: "Luxury hotel with world-class amenities.",
-    heroImage: "/tei ha pics/hospitality-1.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Interior Design", "Construction"],
-    industry: "Hospitality",
-    projectSize: "8,000 m²",
-    duration: "24 months",
-    designChallenges: "Creating a memorable guest experience.",
-    designSolution: "Thoughtful space planning and premium finishes.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "h2",
-    slug: "hospitality-project-2",
-    title: "Hospitality Project 2",
-    category: "Hospitality",
-    location: "Kampala, Uganda",
-    client: "Hospitality Group",
-    status: "Completed",
-    year: 2023,
-    description: "Boutique hotel with unique design elements.",
-    heroImage: "/tei ha pics/hospitality2.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Interior Design", "Construction"],
-    industry: "Hospitality",
-    projectSize: "4,500 m²",
-    duration: "18 months",
-    designChallenges: "Standing out in a competitive market.",
-    designSolution: "Distinctive architectural style and personalized service spaces.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-
-
-  // Industrial
-  {
-    id: "i1",
-    slug: "industrial-project-1",
-    title: "Industrial Project 1",
-    category: "Industrial",
-    location: "Kampala, Uganda",
-    client: "Industrial Corporation",
-    status: "Completed",
-    year: 2024,
-    description: "Modern industrial facility with efficient layout.",
-    heroImage: "/tei ha pics/industrial.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Civil Engineering", "Construction"],
-    industry: "Industrial",
-    projectSize: "15,000 m²",
-    duration: "24 months",
-    designChallenges: "Optimizing workflow and logistics.",
-    designSolution: "Functional layout with clear circulation paths.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "i2",
-    slug: "industrial-project-2",
-    title: "Industrial Project 2",
-    category: "Industrial",
-    location: "Kampala, Uganda",
-    client: "Industrial Corporation",
-    status: "Completed",
-    year: 2023,
-    description: "Warehouse and distribution center.",
-    heroImage: "/tei ha pics/industrial2.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Civil Engineering", "Construction"],
-    industry: "Industrial",
-    projectSize: "20,000 m²",
-    duration: "18 months",
-    designChallenges: "Large-scale storage and efficient loading.",
-    designSolution: "High-ceiling design with multiple loading bays.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "i3",
-    slug: "industrial-project-3",
-    title: "Industrial Project 3",
-    category: "Industrial",
-    location: "Kampala, Uganda",
-    client: "Industrial Corporation",
-    status: "Completed",
-    year: 2023,
-    description: "Manufacturing plant with specialized equipment.",
-    heroImage: "/tei ha pics/industrial3.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Civil Engineering", "Construction"],
-    industry: "Industrial",
-    projectSize: "18,000 m²",
-    duration: "22 months",
-    designChallenges: "Accommodating heavy machinery and specific operational needs.",
-    designSolution: "Reinforced structure and customized floor plans.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "i4",
-    slug: "industrial-project-4",
-    title: "Industrial Project 4",
-    category: "Industrial",
-    location: "Kampala, Uganda",
-    client: "Industrial Corporation",
-    status: "Completed",
-    year: 2022,
-    description: "Logistics hub with state-of-the-art facilities.",
-    heroImage: "/tei ha pics/industrial4.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Civil Engineering", "Construction"],
-    industry: "Industrial",
-    projectSize: "25,000 m²",
-    duration: "28 months",
-    designChallenges: "Handling high-volume logistics operations.",
-    designSolution: "Advanced material handling systems and efficient layout.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-  {
-    id: "i5",
-    slug: "industrial-project-5",
-    title: "Industrial Project 5",
-    category: "Industrial",
-    location: "Kampala, Uganda",
-    client: "Industrial Corporation",
-    status: "Completed",
-    year: 2021,
-    description: "Industrial complex with multiple units.",
-    heroImage: "/tei ha pics/industrial12.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Civil Engineering", "Construction"],
-    industry: "Industrial",
-    projectSize: "30,000 m²",
-    duration: "32 months",
-    designChallenges: "Flexible space for diverse industrial uses.",
-    designSolution: "Modular design that can be adapted to different needs.",
-    aiContribution: [],
-    technologies: [],
-    sustainabilityHighlights: [],
-    projectStats: [],
-    testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
-    seo: { title: "", description: "", keywords: [] }
-  },
-
-  // Commercial
-  {
-    id: "c1",
-    slug: "commercial-project-1",
-    title: "Commercial Project 1",
+    id: "zembo",
+    slug: "zembo-national-battery-swap-network",
+    title: "ZEMBO National Battery Swap Network",
     category: "Commercial",
-    location: "Kampala, Uganda",
-    client: "Commercial Development Group",
+    location: "Multiple Locations, Uganda",
+    client: "ZEMBO Uganda",
     status: "Completed",
     year: 2024,
-    description: "Modern office building with contemporary design.",
-    heroImage: "/tei ha pics/commercial1.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Interior Design", "Construction"],
-    industry: "Commercial",
-    projectSize: "10,000 m²",
-    duration: "24 months",
-    designChallenges: "Creating a professional yet inviting workspace.",
-    designSolution: "Open floor plans with natural light and communal areas.",
+    heroImage: "/tei ha/zembo2.jpeg",
+    heroVideo: undefined,
+    description: "Expanding ZEMBO's battery swap station network across Uganda to support electric mobility.",
+    clientVision: "To construct modern, durable, and highly accessible battery swap stations capable of supporting Uganda's growing electric mobility ecosystem while maintaining consistent branding and quality standards across all locations.",
+    theChallenge: "Delivering consistent, high-quality infrastructure across multiple sites while adhering to strict timelines and brand guidelines.",
+    ourSolution: "TEI-HA provided comprehensive civil construction services, including site preparation, structural works, finishing, branding, and station upgrades.",
+    designJourney: "Our team successfully delivered multiple outdoor battery swap stations including Nakawa Total Station, Mengo RUBIS, Nateete – Bairus Mall, Nakasero – Yujo, and additional locations across Uganda. Beyond new construction, TEI-HA also completed the branding and upgrading of approximately 50 indoor battery swap stations.",
+    projectOutcome: "The successful completion of these projects strengthened ZEMBO's operational network and contributed to Uganda's transition toward cleaner and more sustainable urban mobility.",
+    gallery: [
+      "/tei ha/zembo2.jpeg",
+      "/tei ha/zembo1.jpeg",
+      "/tei ha/zembo3.jpeg",
+      "/tei ha/Zembo-Nakasero.jpeg",
+      "/tei ha/ZemboNakasero1.jpeg",
+      "/tei ha/Zembo-renovation.jpeg"
+    ],
+    videos: [],
+    constructionMilestones: [
+      {
+        title: "Site Preparation",
+        description: "Clearing and preparing sites across multiple locations for construction.",
+        image: "/tei ha/zembo1.jpeg"
+      },
+      {
+        title: "Structural Works",
+        description: "Constructing durable station structures to withstand high traffic.",
+        image: "/tei ha/zembo3.jpeg"
+      },
+      {
+        title: "Branding & Finishing",
+        description: "Implementing consistent ZEMBO branding across all locations.",
+        image: "/tei ha/Zembo-Nakasero.jpeg"
+      }
+    ],
+    servicesUsed: ["Civil Construction", "Site Preparation", "Branding & Upgrades"],
     aiContribution: [],
     technologies: [],
     sustainabilityHighlights: [],
-    projectStats: [],
+    projectStats: [
+      { label: "Stations Constructed", value: 10 },
+      { label: "Indoor Upgrades", value: 50 }
+    ],
     testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
+    relatedProjects: ["g-a-commercial-complex", "soleil-power-experience-center"],
     seo: { title: "", description: "", keywords: [] }
   },
   {
-    id: "c2",
-    slug: "commercial-project-2",
-    title: "Commercial Project 2",
+    id: "ga-commercial",
+    slug: "g-a-commercial-complex",
+    title: "G.A Commercial Complex",
     category: "Commercial",
-    location: "Kampala, Uganda",
-    client: "Commercial Development Group",
-    status: "Completed",
-    year: 2023,
-    description: "Retail complex with multiple storefronts.",
-    heroImage: "/tei ha pics/commercial2.jpeg",
-    gallery: [],
-    servicesUsed: ["Architecture", "Interior Design", "Construction"],
-    industry: "Commercial",
-    projectSize: "8,000 m²",
-    duration: "18 months",
-    designChallenges: "Maximizing retail space and foot traffic.",
-    designSolution: "Strategic layout with anchor stores and pedestrian-friendly design.",
+    location: "Gayaza–Zirobwe Road, Busukuma",
+    client: "Mr. Gareeba Alosysious",
+    status: "In Progress",
+    year: 2024,
+    heroImage: "/tei ha/commercial-building3d.jpeg",
+    heroVideo: "/tei ha/Commercialbuilding-vid.mp4",
+    description: "A modern commercial development designed to support the growing business community in Busukuma.",
+    clientVision: "To create a commercial building that would not only maximize the value of the property but also become a landmark business facility serving the expanding Busukuma Township.",
+    theChallenge: "Designing and constructing a modern commercial building that meets both functional and aesthetic requirements for a growing area.",
+    ourSolution: "The client entrusted TEI-HA Construction Services Ltd with the complete Design & Build responsibility. From architectural planning and engineering design through structural execution and construction supervision, our multidisciplinary team manages every phase of the project.",
+    designJourney: "Architectural planning, engineering design, and structural execution with professional management ensuring quality and timeliness.",
+    projectOutcome: "The project continues to progress under TEI-HA's professional management, ensuring quality workmanship, timely execution, and strict adherence to engineering standards.",
+    gallery: [
+      "/tei ha/commercial-building3d.jpeg",
+      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1 (Copy).jpeg",
+      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1.jpeg",
+      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa3.jpeg",
+      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa.jpeg"
+    ],
+    videos: [
+      {
+        title: "Construction Progress",
+        thumbnail: "/tei ha/commercial-building3d.jpeg",
+        src: "/tei ha/Commercialbuilding-vid.mp4"
+      }
+    ],
+    constructionMilestones: [
+      {
+        title: "Architectural Design",
+        description: "Creating the initial design and 3D renderings for the complex.",
+        image: "/tei ha/commercial-building3d.jpeg"
+      }
+    ],
+    servicesUsed: ["Design & Build", "Architecture", "Engineering", "Construction Supervision"],
     aiContribution: [],
     technologies: [],
     sustainabilityHighlights: [],
     projectStats: [],
     testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
+    relatedProjects: ["zembo-national-battery-swap-network", "k-a-business-center"],
     seo: { title: "", description: "", keywords: [] }
   },
-
-
-  // Master Planning
   {
-    id: "mp1",
-    slug: "master-plan-1",
-    title: "Master Plan 1",
-    category: "Master Planning",
-    location: "Kampala, Uganda",
-    client: "Urban Development Authority",
+    id: "anaku-residence",
+    slug: "namulonge-family-residence",
+    title: "Namulonge Family Residence",
+    category: "Residential",
+    location: "Namulonge–Buso Trading Centre, Nansana Municipality",
+    client: "Mr. Patrick Anaku",
     status: "Completed",
     year: 2024,
-    description: "Comprehensive master plan for a new community.",
-    heroImage: "/tei ha pics/plan.jpeg",
-    gallery: [],
-    servicesUsed: ["Urban Planning", "Architecture", "Civil Engineering"],
-    industry: "Master Planning",
-    projectSize: "50 hectares",
-    duration: "24 months",
-    designChallenges: "Creating a sustainable and inclusive community.",
-    designSolution: "Mixed-use zoning with green spaces and essential amenities.",
+    heroImage: "/tei ha/anaku's residence-plan.jpeg",
+    heroVideo: "/tei ha/Anaku-vid.mp4",
+    description: "A custom-designed modern family home tailored to both present needs and future expansion.",
+    clientVision: "To have a comfortable, modern family residence tailored to both present needs and future expansion.",
+    theChallenge: "Creating a custom home that perfectly balances current family needs with future growth potential.",
+    ourSolution: "TEI-HA handled the project from the earliest planning stages through architectural design, engineering, approvals, construction, and final finishing. Our integrated Design & Build approach ensured consistency in quality while simplifying project coordination for the client.",
+    designJourney: "From initial concept to final finishing with integrated design and build services.",
+    projectOutcome: "The completed home reflects the client's vision while maintaining structural integrity, functionality, and aesthetic appeal.",
+    gallery: [
+      "/tei ha/anaku's residence-plan.jpeg",
+      "/tei ha/residential-mrAnaku.jpeg",
+      "/tei ha/anaku1.jpeg",
+      "/tei ha/anaku3.jpeg"
+    ],
+    videos: [
+      {
+        title: "Home Tour",
+        thumbnail: "/tei ha/anaku's residence-plan.jpeg",
+        src: "/tei ha/Anaku-vid.mp4"
+      }
+    ],
+    constructionMilestones: [
+      {
+        title: "Design Phase",
+        description: "Creating custom architectural plans tailored to the family's needs.",
+        image: "/tei ha/anaku's residence-plan.jpeg"
+      },
+      {
+        title: "Construction",
+        description: "Building the home with attention to detail and quality.",
+        image: "/tei ha/residential-mrAnaku.jpeg"
+      }
+    ],
+    servicesUsed: ["Design & Build", "Architecture", "Engineering", "Construction"],
     aiContribution: [],
     technologies: [],
     sustainabilityHighlights: [],
     projectStats: [],
     testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
+    relatedProjects: ["njovu-estate-residence", "bukalango-contemporary-residence"],
     seo: { title: "", description: "", keywords: [] }
   },
   {
-    id: "mp2",
-    slug: "master-plan-2",
-    title: "Master Plan 2",
-    category: "Master Planning",
-    location: "Kampala, Uganda",
-    client: "Urban Development Authority",
+    id: "kato-residence",
+    slug: "njovu-estate-residence",
+    title: "Njovu Estate Residence",
+    category: "Residential",
+    location: "Mabwombwe, Njovu Estate",
+    client: "Mr. Kato Umar",
     status: "Completed",
     year: 2023,
-    description: "Urban renewal master plan for a city district.",
-    heroImage: "/tei ha pics/plan1.jpeg",
-    gallery: [],
-    servicesUsed: ["Urban Planning", "Architecture", "Civil Engineering"],
-    industry: "Master Planning",
-    projectSize: "30 hectares",
-    duration: "18 months",
-    designChallenges: "Preserving heritage while modernizing.",
-    designSolution: "Adaptive reuse of existing structures with new developments.",
+    heroImage: "/tei ha/Kato-residentail1.jpeg",
+    heroVideo: "/tei ha/kato-vid.mp4",
+    description: "A modern residence resulting from a complete redesign and project recovery.",
+    clientVision: "To have a modern home that exceeded expectations after an initial project fell short.",
+    theChallenge: "The client had initially contracted another construction company whose pre-construction services failed to meet expectations. The project required a complete redesign and renewed technical direction.",
+    ourSolution: "TEI-HA was engaged to take over the project from concept through execution. Our architects and engineers redesigned the project, optimized the layout, and successfully supervised construction.",
+    designJourney: "Complete redesign and project recovery from initial concept through construction supervision.",
+    projectOutcome: "The result was a modern residence that exceeded the client's expectations and restored confidence in the project.",
+    gallery: [
+      "/tei ha/Kato-residentail1.jpeg",
+      "/tei ha/kato2.jpeg",
+      "/tei ha/kato3.jpeg",
+      "/tei ha/kato4.jpeg",
+      "/tei ha/kato5.jpeg"
+    ],
+    videos: [
+      {
+        title: "Completed Home",
+        thumbnail: "/tei ha/Kato-residentail1.jpeg",
+        src: "/tei ha/kato-vid.mp4"
+      }
+    ],
+    constructionMilestones: [
+      {
+        title: "Project Recovery & Redesign",
+        description: "Taking over and completely redesigning the project.",
+        image: "/tei ha/kato2.jpeg"
+      },
+      {
+        title: "Construction",
+        description: "Building the redesigned home with quality craftsmanship.",
+        image: "/tei ha/Kato-residentail1.jpeg"
+      }
+    ],
+    servicesUsed: ["Project Recovery", "Redesign", "Architecture", "Construction Supervision"],
     aiContribution: [],
     technologies: [],
     sustainabilityHighlights: [],
     projectStats: [],
     testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
+    relatedProjects: ["namulonge-family-residence", "bukalango-contemporary-residence"],
     seo: { title: "", description: "", keywords: [] }
   },
   {
-    id: "mp3",
-    slug: "master-plan-3",
-    title: "Master Plan 3",
-    category: "Master Planning",
-    location: "Kampala, Uganda",
-    client: "Urban Development Authority",
+    id: "soleil-power",
+    slug: "soleil-power-experience-center",
+    title: "Soleil Power Experience Centre",
+    category: "Commercial",
+    location: "SMS House, 7th Street, Industrial Area, Kampala",
+    client: "Soleil Power",
     status: "Completed",
-    year: 2022,
-    description: "Master plan for a new industrial park.",
-    heroImage: "/tei ha pics/plan2.jpeg",
-    gallery: [],
-    servicesUsed: ["Urban Planning", "Architecture", "Civil Engineering"],
-    industry: "Master Planning",
-    projectSize: "80 hectares",
-    duration: "28 months",
-    designChallenges: "Optimizing infrastructure and logistics.",
-    designSolution: "Strategic zoning with efficient transportation links.",
+    year: 2024,
+    heroImage: "/tei ha/UpgradingSoleilPower1 .jpeg",
+    heroVideo: "/tei ha/UpgradingSoleilPower-vid.mp4",
+    description: "Upgrading the Soleil Power showroom to enhance customer experience and brand presentation.",
+    clientVision: "To create an enhanced showroom experience that reflects Soleil Power's brand identity.",
+    theChallenge: "Renovating an existing space to improve customer experience while maintaining operations.",
+    ourSolution: "TEI-HA upgraded the showroom focusing on improved finishes, optimized layouts, and modern branding elements aligned with Soleil Power's corporate identity.",
+    designJourney: "Renovation focusing on finishes, layout optimization, and branding.",
+    projectOutcome: "Enhanced showroom with improved customer experience and modern branding.",
+    gallery: [
+      "/tei ha/UpgradingSoleilPower1 .jpeg",
+      "/tei ha/Upgrading-Soleil-Power .jpeg"
+    ],
+    videos: [
+      {
+        title: "Showroom Tour",
+        thumbnail: "/tei ha/UpgradingSoleilPower1 .jpeg",
+        src: "/tei ha/UpgradingSoleilPower-vid.mp4"
+      }
+    ],
+    constructionMilestones: [
+      {
+        title: "Renovation & Upgrades",
+        description: "Implementing new finishes and branding elements.",
+        image: "/tei ha/UpgradingSoleilPower1 .jpeg"
+      }
+    ],
+    servicesUsed: ["Commercial Interior Renovation", "Branding", "Layout Optimization"],
     aiContribution: [],
     technologies: [],
     sustainabilityHighlights: [],
     projectStats: [],
     testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
+    relatedProjects: ["zembo-national-battery-swap-network", "g-a-commercial-complex"],
     seo: { title: "", description: "", keywords: [] }
   },
   {
-    id: "mp4",
-    slug: "master-plan-4",
-    title: "Master Plan 4",
-    category: "Master Planning",
-    location: "Kampala, Uganda",
-    client: "Urban Development Authority",
+    id: "naume-residence",
+    slug: "bukalango-contemporary-residence",
+    title: "Bukalango Contemporary Residence",
+    category: "Residential",
+    location: "Bukalango–Kakiri",
+    client: "Mr. & Mrs. Mukontanyi Didas and Atuhaire Naume",
     status: "Completed",
-    year: 2021,
-    description: "Master plan for a residential community.",
-    heroImage: "/tei ha pics/plan3.jpeg",
-    gallery: [],
-    servicesUsed: ["Urban Planning", "Architecture", "Civil Engineering"],
-    industry: "Master Planning",
-    projectSize: "40 hectares",
-    duration: "22 months",
-    designChallenges: "Creating a family-friendly environment.",
-    designSolution: "Parks, schools, and community centers integrated into the plan.",
+    year: 2024,
+    heroImage: "/tei ha/Naume-residentialplan2.jpeg",
+    heroVideo: "/tei ha/Residential-houseBukalango-vid.mp4",
+    description: "Complete Design & Build of a modern family residence in Bukalango–Kakiri.",
+    clientVision: "To build a modern family home through a complete design and build service.",
+    theChallenge: "Delivering a complete Design & Build project with seamless coordination from concept to completion.",
+    ourSolution: "TEI-HA provided architectural design, engineering consultancy, project management, and full construction services from concept to completion.",
+    designJourney: "From architectural design to final finishing with full project management.",
+    projectOutcome: "A completed modern family residence in Bukalango–Kakiri.",
+    gallery: [
+      "/tei ha/Naume-residentialplan2.jpeg",
+      "/tei ha/Naume-residential.jpeg",
+      "/tei ha/Naume-residential2.jpeg",
+      "/tei ha/Naume-residential3.jpeg",
+      "/tei ha/Naume-residential4.jpeg",
+      "/tei ha/Naume-residential-foundation.jpeg",
+      "/tei ha/Naume-residentialPlan.jpeg",
+      "/tei ha/Naume-residentialplan3.jpeg.jpeg",
+      "/tei ha/Residentialhouse-Bukalango1.jpeg",
+      "/tei ha/Residentialhouse-Bukalango2.jpeg"
+    ],
+    videos: [
+      {
+        title: "Home Tour",
+        thumbnail: "/tei ha/Residentialhouse-Bukalango1.jpeg",
+        src: "/tei ha/Residential-houseBukalango-vid.mp4"
+      }
+    ],
+    constructionMilestones: [
+      {
+        title: "Foundation Works",
+        description: "Laying the foundation for the residence.",
+        image: "/tei ha/Naume-residential-foundation.jpeg"
+      },
+      {
+        title: "Structural Frame",
+        description: "Building the structural frame of the home.",
+        image: "/tei ha/Naume-residential2.jpeg"
+      },
+      {
+        title: "Finishing",
+        description: "Final finishes and completion of the residence.",
+        image: "/tei ha/Residentialhouse-Bukalango1.jpeg"
+      }
+    ],
+    servicesUsed: ["Design & Build", "Architecture", "Engineering", "Project Management", "Construction"],
     aiContribution: [],
     technologies: [],
     sustainabilityHighlights: [],
     projectStats: [],
     testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
+    relatedProjects: ["namulonge-family-residence", "njovu-estate-residence"],
     seo: { title: "", description: "", keywords: [] }
   },
   {
-    id: "mp5",
-    slug: "master-plan-5",
-    title: "Master Plan 5",
-    category: "Master Planning",
-    location: "Kampala, Uganda",
-    client: "Urban Development Authority",
-    status: "Completed",
-    year: 2020,
-    description: "Comprehensive master plan for a mixed-use development.",
-    heroImage: "/tei ha pics/plan5.jpeg",
-    gallery: [],
-    servicesUsed: ["Urban Planning", "Architecture", "Civil Engineering"],
-    industry: "Master Planning",
-    projectSize: "60 hectares",
-    duration: "30 months",
-    designChallenges: "Balancing commercial, residential, and recreational spaces.",
-    designSolution: "Integrated design with walkable streets and public spaces.",
+    id: "material-supply",
+    slug: "construction-materials-logistics-services",
+    title: "Construction Materials & Logistics Services",
+    category: "Commercial",
+    location: "Uganda",
+    client: "Multiple Clients",
+    status: "Ongoing",
+    year: 2024,
+    heroImage: "/tei ha/Material-supply-and-delivery2.jpeg",
+    heroVideo: undefined,
+    description: "Beyond construction, TEI-HA provides reliable procurement, logistics, and delivery of quality construction materials for projects of all sizes.",
+    clientVision: "To have a reliable partner for quality construction materials and timely delivery.",
+    theChallenge: "Ensuring timely delivery of quality materials while maintaining cost effectiveness.",
+    ourSolution: "Our efficient supply chain ensures timely delivery while maintaining quality assurance and cost effectiveness.",
+    designJourney: "Developing and maintaining an efficient supply chain for construction materials.",
+    projectOutcome: "Reliable procurement, logistics, and delivery services for projects of all sizes.",
+    gallery: [
+      "/tei ha/Material-supply-and-delivery2.jpeg",
+      "/tei ha/Material-supply-and-delivery.jpeg"
+    ],
+    videos: [],
+    constructionMilestones: [],
+    servicesUsed: ["Procurement", "Logistics", "Material Supply", "Delivery Services"],
     aiContribution: [],
     technologies: [],
     sustainabilityHighlights: [],
     projectStats: [],
     testimonial: { quote: "", author: "", role: "" },
-    relatedProjects: [],
+    relatedProjects: ["zembo-national-battery-swap-network", "ntake-oil-mills-industrial-infrastructure"],
+    seo: { title: "", description: "", keywords: [] }
+  },
+  {
+    id: "ntake-oil",
+    slug: "ntake-oil-mills-industrial-infrastructure",
+    title: "Ntake Oil Mills Industrial Infrastructure",
+    category: "Industrial",
+    location: "Namanve Industrial Park",
+    client: "Ntake Oil Mills",
+    status: "Completed",
+    year: 2023,
+    heroImage: "/tei ha/industrial-construction-of-Ntake-Oil-mills .jpeg",
+    heroVideo: undefined,
+    description: "TEI-HA's engineering team participated in the construction of the Ntake Oil Mills and Refinery Project.",
+    clientVision: "To develop critical industrial infrastructure for one of Uganda's major industrial investments.",
+    theChallenge: "Contributing to a large-scale industrial project with high standards and timelines.",
+    ourSolution: "Our professionals contributed to civil works within the Road and Drainage Department.",
+    designJourney: "Execution of civil works for road and drainage infrastructure.",
+    projectOutcome: "The assigned works achieved approximately 98% successful completion, reflecting our team's technical competence and commitment to quality execution on large-scale industrial projects.",
+    gallery: [
+      "/tei ha/industrial-construction-of-Ntake-Oil-mills .jpeg",
+      "/tei ha/industrial-construction-of-Ntake-Oil-mills1.jpeg",
+      "/tei ha/industrial-construction-of-Ntake-Oil-mills2.jpeg",
+      "/tei ha/industrial-construction-of-Ntake-Oil-mills3.jpeg",
+      "/tei ha/industrial-construction-of-Ntake-Oil-mills4.jpeg"
+    ],
+    videos: [],
+    constructionMilestones: [
+      {
+        title: "Site Works",
+        description: "Initial site preparation and civil works.",
+        image: "/tei ha/industrial-construction-of-Ntake-Oil-mills2.jpeg"
+      },
+      {
+        title: "Road & Drainage",
+        description: "Construction of road and drainage infrastructure.",
+        image: "/tei ha/industrial-construction-of-Ntake-Oil-mills .jpeg"
+      }
+    ],
+    servicesUsed: ["Civil Works", "Road Construction", "Drainage Infrastructure", "Industrial Construction"],
+    aiContribution: [],
+    technologies: [],
+    sustainabilityHighlights: [],
+    projectStats: [
+      { label: "Completion Rate", value: 98, suffix: "%" }
+    ],
+    testimonial: { quote: "", author: "", role: "" },
+    relatedProjects: ["construction-materials-logistics-services"],
+    seo: { title: "", description: "", keywords: [] }
+  },
+  {
+    id: "gomba-residence",
+    slug: "gomba-countryside-residence",
+    title: "Gomba Countryside Residence",
+    category: "Residential",
+    location: "Gomba District, Maddu, Nakitembe",
+    client: "Obed Ben Family",
+    status: "Completed",
+    year: 2024,
+    heroImage: "/tei ha/residential-house-in-GombaPlan2.jpeg",
+    heroVideo: undefined,
+    description: "Design & Build project developed as a family residence for the parents of Mr. Obed Ben.",
+    clientVision: "To build a family home in Gomba District.",
+    theChallenge: "Delivering a quality home in a rural setting with proper project management.",
+    ourSolution: "TEI-HA managed every project phase, delivering a home designed to meet the family's functional needs while ensuring quality construction and long-term durability.",
+    designJourney: "From design to completion with full project management.",
+    projectOutcome: "Completed family residence in Gomba District, Maddu, Nakitembe.",
+    gallery: [
+      "/tei ha/residential-house-in-GombaPlan2.jpeg",
+      "/tei ha/residential-house-in -Gomba.jpeg",
+      "/tei ha/residential-house-in -Gomba1.jpeg",
+      "/tei ha/residential-house-in -Gomba2.jpeg",
+      "/tei ha/residential-house-in-GombaPlan.jpeg"
+    ],
+    videos: [],
+    constructionMilestones: [
+      {
+        title: "Design & Planning",
+        description: "Creating the plans for the countryside residence.",
+        image: "/tei ha/residential-house-in-GombaPlan.jpeg"
+      },
+      {
+        title: "Construction",
+        description: "Building the family home.",
+        image: "/tei ha/residential-house-in -Gomba1.jpeg"
+      }
+    ],
+    servicesUsed: ["Design & Build", "Architecture", "Project Management", "Construction"],
+    aiContribution: [],
+    technologies: [],
+    sustainabilityHighlights: [],
+    projectStats: [],
+    testimonial: { quote: "", author: "", role: "" },
+    relatedProjects: ["busukuma-modern-residence", "namulonge-family-residence"],
+    seo: { title: "", description: "", keywords: [] }
+  },
+  {
+    id: "eyotre-residence",
+    slug: "busukuma-modern-residence",
+    title: "Busukuma Modern Residence",
+    category: "Residential",
+    location: "Busukuma Town, Plot 158, Block 834, Busukuma Division, Nansana Municipality",
+    client: "Mr. Eyotre Julias",
+    status: "Completed",
+    year: 2024,
+    heroImage: "/tei ha/residential-house-of-Mr. Eyotre2 .jpeg",
+    heroVideo: undefined,
+    description: "Complete Design & Build of a modern residential home in Busukuma Town.",
+    clientVision: "To build a modern residential home through complete Design & Build services.",
+    theChallenge: "Delivering a modern home with high engineering and architectural standards.",
+    ourSolution: "From concept development through construction, TEI-HA ensured every phase reflected the client's vision while maintaining high engineering and architectural standards.",
+    designJourney: "From concept through construction with full design and build services.",
+    projectOutcome: "Completed modern residential home in Busukuma Town.",
+    gallery: [
+      "/tei ha/residential-house-of-Mr. Eyotre2 .jpeg",
+      "/tei ha/residential-house-of-Mr. Eyotre.jpeg",
+      "/tei ha/residential-house-of-Mr. Eyotre2  (Copy).jpeg"
+    ],
+    videos: [],
+    constructionMilestones: [
+      {
+        title: "Concept Development",
+        description: "Creating the concept for the modern residence.",
+        image: "/tei ha/residential-house-of-Mr. Eyotre.jpeg"
+      },
+      {
+        title: "Construction",
+        description: "Building the home to high standards.",
+        image: "/tei ha/residential-house-of-Mr. Eyotre2 .jpeg"
+      }
+    ],
+    servicesUsed: ["Design & Build", "Architecture", "Engineering", "Construction"],
+    aiContribution: [],
+    technologies: [],
+    sustainabilityHighlights: [],
+    projectStats: [],
+    testimonial: { quote: "", author: "", role: "" },
+    relatedProjects: ["gomba-countryside-residence", "bukalango-contemporary-residence"],
+    seo: { title: "", description: "", keywords: [] }
+  },
+  {
+    id: "ka-building",
+    slug: "k-a-business-center",
+    title: "K.A Business Center",
+    category: "Commercial",
+    location: "Nabweru South along Nabweru Road leading to the Nansana Division Offices",
+    client: "Mr. Kitonsa Alexander",
+    status: "Completed",
+    year: 2024,
+    heroImage: "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1 (Copy).jpeg",
+    heroVideo: undefined,
+    description: "A commercial development designed to support the area's growing economic activity.",
+    clientVision: "To create a commercial property that supports the growing economic activity in Nabweru South.",
+    theChallenge: "Designing and constructing a commercial building for a growing area.",
+    ourSolution: "TEI-HA delivered complete Design & Build services, transforming the client's vision into a modern commercial property through integrated architectural design, engineering, and construction management.",
+    designJourney: "Complete Design & Build from architectural design through construction management.",
+    projectOutcome: "Completed modern commercial property in Nabweru South.",
+    gallery: [
+      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1 (Copy).jpeg",
+      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1.jpeg",
+      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa3.jpeg",
+      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa.jpeg"
+    ],
+    videos: [],
+    constructionMilestones: [
+      {
+        title: "Architectural Design",
+        description: "Creating the design for the business center.",
+        image: "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1 (Copy).jpeg"
+      },
+      {
+        title: "Construction",
+        description: "Building the commercial property.",
+        image: "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa3.jpeg"
+      }
+    ],
+    servicesUsed: ["Design & Build", "Architecture", "Engineering", "Construction Management"],
+    aiContribution: [],
+    technologies: [],
+    sustainabilityHighlights: [],
+    projectStats: [],
+    testimonial: { quote: "", author: "", role: "" },
+    relatedProjects: ["g-a-commercial-complex", "soleil-power-experience-center"],
     seo: { title: "", description: "", keywords: [] }
   }
 ];
@@ -607,5 +575,4 @@ export function getProjectBySlug(slug: string): Project | undefined {
   return PROJECTS.find((project) => project.slug === slug);
 }
 
-export const PROJECT_CATEGORIES = ["All", "Residential", "Hospitality", "Industrial", "Commercial", "Master Planning"];
-
+export const PROJECT_CATEGORIES = ["All", "Residential", "Commercial", "Hospitality", "Industrial"];
