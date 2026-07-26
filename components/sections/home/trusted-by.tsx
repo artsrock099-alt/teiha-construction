@@ -15,15 +15,15 @@ const COMPANY_LOGOS = [
   },
   {
     name: "Partner",
-    src: "/tei ha/Partner.jpeg",
+    src: "/tei ha pics/DT-solar-logo.jpeg",
   },
   {
     name: "Partner 1",
-    src: "/tei ha/Partner1.jpeg",
+    src: "/tei ha pics/logo-for-UMSC.jpeg",
   },
   {
     name: "Partner 3",
-    src: "/tei ha/Partner3.jpeg",
+    src: "/tei ha pics/MIAU-logo.jpeg",
   },
 ];
 

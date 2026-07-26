@@ -59,7 +59,7 @@ export function Header() {
             />
             <div className="flex flex-col">
               <span className="text-lg md:text-xl font-bold text-primary font-[Plus_Jakarta_Sans] tracking-tight">
-                TEI-HA Construction Services Ltd.
+                TEI-HA CONSTRUCTION SERVICES Ltd.
               </span>
               <span className="hidden md:block text-xs text-muted-foreground">
                 Quality Is Our Priority

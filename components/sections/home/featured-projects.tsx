@@ -13,14 +13,14 @@ const FEATURED_PROJECTS = [
   {
     title: "Zembo",
     description: "Tei-ha has constructed various stations such as Nakawa total zembo Outdoor swap station, Mengo RUBIS, Nateete at Bairus Mall, Nakasero at Yujo etc. and station branding and upgrading across various locations in uganda. Around 50 indoor stations Branded and upgraded by TEI-HA CONSTRUCTION SERVICES LIMITED.",
-    imageUrl: "/tei ha/zembo3.jpeg",
+    imageUrl: "/tei ha pics/Zembo4.jpeg",
     isPdf: false,
     size: "large",
   },
   {
     title: "Soleil Power Showroom Renovation",
     description: "Upgrading Soleil Power showroom at SMS HOUSE 7th Street industrial area",
-    imageUrl: "/tei ha/UpgradingSoleilPower1 .jpeg",
+    imageUrl: "/tei ha pics/Upgrading-Soleil-Power2.jpeg",
     isPdf: false,
     size: "small",
   },
@@ -41,7 +41,7 @@ const FEATURED_PROJECTS = [
   {
     title: "Kiwanuka Mosque Plan",
     description: "Architectural plan for Kiwanuka Mosque",
-    imageUrl: "/tei ha/Mosque Kiwanuka.pdf",
+    imageUrl: "/tei ha pics/Mosque Kiwanuka.pdf",
     isPdf: true,
     size: "small",
   },
