@@ -58,7 +58,7 @@ export function Header() {
               priority
             />
             <div className="flex flex-col">
-              <span className="text-lg md:text-xl font-bold text-primary font-[Plus_Jakarta_Sans] tracking-tight">
+              <span className="text-lg md:text-xl font-bold font-[Plus_Jakarta_Sans] tracking-tight" style={{ color: "#d4a017" }}>
                 TEI-HA CONSTRUCTION SERVICES Ltd.
               </span>
               <span className="hidden md:block text-xs text-muted-foreground">

@@ -53,7 +53,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 md:gap-10 mb-12 md:mb-16">
           {/* Company Overview */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <Link href="/" className="text-2xl md:text-3xl font-bold font-[Plus_Jakarta_Sans] mb-4 block">
+            <Link href="/" className="text-2xl md:text-3xl font-bold font-[Plus_Jakarta_Sans] mb-4 block" style={{ color: "#d4a017" }}>
               TEI-HA
             </Link>
             <p className="text-white/70 mb-6 max-w-md text-sm md:text-base">

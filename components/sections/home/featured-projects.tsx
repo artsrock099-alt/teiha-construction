@@ -3,9 +3,9 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform, Variants } from "framer-motion";
+import { motion, useScroll, useTransform, Variants, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Featured projects data
@@ -27,14 +27,14 @@ const FEATURED_PROJECTS = [
   {
     title: "Residential House in Gomba",
     description: "Design and Build residential house in Gomba, Maddu, Nakitembe - Obed Ben parents house",
-    imageUrl: "/tei ha/residential-house-in -Gomba1.jpeg",
+    imageUrl: "/tei ha pics/Residential-Obed-Ben1.jpeg",
     isPdf: false,
     size: "small",
   },
   {
     title: "Cottage Design",
     description: "Master plan and cottage design",
-    imageUrl: "/tei ha/Cottage-design.jpeg",
+    imageUrl: "/tei ha pics/CottageDesign.jpeg",
     isPdf: false,
     size: "small",
   },
@@ -48,7 +48,7 @@ const FEATURED_PROJECTS = [
   {
     title: "3D Master Plan",
     description: "3D design of A Commercial Building built on Plot 52 Block 134, opposite Busukuma Division headquarters along Gayaza - Zirobwe road in Busukuma Town, Nansana Municipality.",
-    imageUrl: "/tei ha/commercial-building3d.jpeg",
+    imageUrl: "/tei ha pics/hero17.jpeg",
     isPdf: false,
     size: "large",
   },
@@ -56,41 +56,48 @@ const FEATURED_PROJECTS = [
 
 // Category projects
 const RESIDENTIAL_PROJECTS = [
-  { imageUrl: "/tei ha/Kato-residentail1.jpeg" },
-  { imageUrl: "/tei ha/anaku's residence-plan.jpeg" },
-  { imageUrl: "/tei ha/anaku1.jpeg" },
-  { imageUrl: "/tei ha/Naume-residential4.jpeg" },
-  { imageUrl: "/tei ha/residential-house-in -Gomba2.jpeg" },
-  { imageUrl: "/tei ha/Residentialhouse-Bukalango1.jpeg" },
-  { imageUrl: "/tei ha/kato5.jpeg" },
+  { imageUrl: "/tei ha pics/Residential-house-of-MrAnaku2.jpeg" },
+  { imageUrl: "/tei ha pics/AnakuREsidencePlan.jpeg" },
+  { imageUrl: "/tei ha pics/Mr. Eyotre-JuliasPlan2.jpeg" },
+  { imageUrl: "/tei ha pics/Naume-Residential1.jpeg" },
+  { imageUrl: "/tei ha pics/Kato's-site7.jpeg" },
+  { imageUrl: "/tei ha pics/Kato's-site5.jpeg" },
+  { imageUrl: "/tei ha pics/Residential-Obed-Ben3.jpeg" },
+  { imageUrl: "/tei ha pics/residential9.jpeg" },
+  { imageUrl: "/tei ha pics/WhatsApp Image 2026-07-12 at 9.46.02 AM (3).jpeg" },
 ];
 
 const COMMERCIAL_PROJECTS = [
-  { imageUrl: "/tei ha pics/commercial3.jpeg" },
-  { imageUrl: "/tei ha pics/commercial2.jpeg" },
-  { imageUrl: "/tei ha/Upgrading-Soleil-Power .jpeg" },
-  { imageUrl: "/tei ha/Kitintale1.jpeg" },
-  { imageUrl: "/tei ha/Zembo-Nakasero.jpeg" },
-  { imageUrl: "/tei ha/Zembo-renovation.jpeg" },
+  { imageUrl: "/tei ha pics/Commercial-Building-Busukuma1.jpeg" },
+  { imageUrl: "/tei ha pics/Kintintale-delivered3.jpeg" },
+  { imageUrl: "/tei ha pics/Ntake-Oil-mills.jpeg" },
+  { imageUrl: "/tei ha pics/REnnovation5.jpeg" },
+  { imageUrl: "/tei ha pics/Innovation-Works2.jpeg" },
+  { imageUrl: "/tei ha pics/Zembo3.jpeg" },
+  { imageUrl: "/tei ha pics/Commercial-Building-Busukuma9.jpeg" },
+  { imageUrl: "/tei ha pics/Innovation-of-MIAU-showroom3.jpeg" },
+  { imageUrl: "/tei ha pics/DEsign10.jpeg" },
 ];
 
 const HOSPITALITY_PROJECTS = [
-  { videoUrl: "/tei ha/Mukono-ResortPlan1.mp4" },
+  { videoUrl: "/tei ha pics/Mukono-Resort.mp4" },
   { imageUrl: "/tei ha pics/hero12.jpeg" },
   { imageUrl: "/tei ha pics/hero11.jpeg" },
-  { imageUrl: "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa.jpeg" },
-  { videoUrl: "/tei ha/Mukono-ResortPlan5.mp4" },
+  { imageUrl: "/tei ha pics/Design-and-Build-of-KA-Building-of-MrKitonsa-Alexander1.jpeg" },
+  { videoUrl: "/tei ha pics/Mukono-Resort5.mp4" },
   { imageUrl: "/tei ha pics/hospitality3.jpeg" },
+  { imageUrl: "/tei ha pics/plan2.jpeg" },
 ];
 
 const INDUSTRIAL_PROJECTS = [
   { imageUrl: "/tei ha pics/industrial2.jpeg" },
-  { imageUrl: "/tei ha pics/WhatsApp Image 2026-07-13 at 5.26.56 PM.jpeg" },
-  { videoUrl: "/tei ha pics/WhatsApp Video 2026-07-13 at 5.47.47 PM.mp4" },
-  { imageUrl: "/tei ha/industrial-construction-of-Ntake-Oil-mills1.jpeg" },
-  { imageUrl: "/tei ha/industrial-construction-of-Ntake-Oil-mills4.jpeg" },
+  { imageUrl: "/tei ha pics/Ntake-Oil-mills4.jpeg" },
+  { videoUrl: "/tei ha pics/Innovation-of-MIAU-showroom.jpeg" },
+  { imageUrl: "/tei ha pics/REnnovation7.jpeg" },
+  { imageUrl: "/tei ha pics/Ntake-Oil-mills5.jpeg" },
   { imageUrl: "/tei ha pics/industrial4.jpeg" },
   { imageUrl: "/tei ha pics/industrial3.jpeg" },
+  { imageUrl: "/tei ha pics/Ntake-Oil-mills10.jpeg" },
 ];
 
 // Animation variants
@@ -119,13 +126,61 @@ const fadeIn: Variants = {
   visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
+// PDF Viewer Modal
+function PdfModal({ pdfUrl, onClose }: { pdfUrl: string; onClose: () => void }) {
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
+        onClick={onClose}
+      >
+        {/* Backdrop */}
+        <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+        
+        {/* Modal Content */}
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          onClick={(e) => e.stopPropagation()}
+          className="relative w-full max-w-5xl h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl"
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-white">
+            <h3 className="text-lg font-semibold text-gray-900">Kiwanuka Mosque Plan</h3>
+            <button
+              onClick={onClose}
+              className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+              aria-label="Close PDF viewer"
+            >
+              <X className="w-5 h-5 text-gray-600" />
+            </button>
+          </div>
+          {/* PDF Viewer */}
+          <iframe
+            src={pdfUrl}
+            className="w-full h-[calc(90vh-64px)]"
+            title="Kiwanuka Mosque Plan"
+          />
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 // Project card component with hover effects
 function ProjectCard({ 
   project, 
-  index 
+  index,
+  onPdfClick,
 }: { 
   project: typeof FEATURED_PROJECTS[0]; 
-  index: number 
+  index: number;
+  onPdfClick: (url: string) => void;
 }) {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -20]);
@@ -136,6 +191,12 @@ function ProjectCard({
     return variants[index % variants.length];
   };
 
+  const handleClick = () => {
+    if (project.isPdf) {
+      onPdfClick(project.imageUrl);
+    }
+  };
+
   return (
     <motion.div
       initial="hidden"
@@ -143,6 +204,7 @@ function ProjectCard({
       viewport={{ once: true, margin: "-100px" }}
       transition={{ delay: index * 0.15 }}
       variants={getVariant()}
+      onClick={handleClick}
       className={cn(
         "relative overflow-hidden rounded-2xl group cursor-pointer",
         project.size === "large" ? "col-span-1 md:col-span-2 row-span-2 aspect-square" : "col-span-1 aspect-[4/3]"
@@ -242,8 +304,12 @@ function Carousel({
 }
 
 export function FeaturedProjects() {
+  const [pdfUrl, setPdfUrl] = React.useState<string | null>(null);
+
   return (
-    <section className="py-24 bg-white">
+    <>
+      {pdfUrl && <PdfModal pdfUrl={pdfUrl} onClose={() => setPdfUrl(null)} />}
+      <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         {/* Editorial Introduction */}
         <div className="mb-20 max-w-3xl">
@@ -278,7 +344,7 @@ export function FeaturedProjects() {
         {/* Premium Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {FEATURED_PROJECTS.map((project, idx) => (
-            <ProjectCard key={idx} project={project} index={idx} />
+            <ProjectCard key={idx} project={project} index={idx} onPdfClick={setPdfUrl} />
           ))}
         </div>
 
@@ -312,5 +378,6 @@ export function FeaturedProjects() {
         </motion.div>
       </div>
     </section>
+    </>
   );
 }

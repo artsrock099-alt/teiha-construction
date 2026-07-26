@@ -15,7 +15,7 @@ export function FinalCTA() {
             Ready to Start Your Next Project?
           </h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Let's work together to build something amazing. Book a free consultation today and discover how TEI-HA can bring your vision to life.
+            Let's work together to build something amazing. Book a free consultation today and discover how <span style={{ color: "#d4a017" }}>TEI-HA</span> can bring your vision to life.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="xl" asChild className="bg-white text-primary hover:bg-white/90">

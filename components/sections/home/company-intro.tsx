@@ -24,7 +24,7 @@ export function CompanyIntro() {
             </div>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <p className="text-secondary font-medium mb-2">About TEI-HA</p>
+            <p className="font-medium mb-2" style={{ color: "#d4a017" }}>About TEI-HA</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Redefining Construction.
             </h2>
