@@ -456,23 +456,23 @@ export const PROJECTS: Project[] = [
     designJourney: "From design to completion with full project management.",
     projectOutcome: "Completed family residence in Gomba District, Maddu, Nakitembe.",
     gallery: [
-      "/tei ha/residential-house-in-GombaPlan2.jpeg",
-      "/tei ha/residential-house-in -Gomba.jpeg",
-      "/tei ha/residential-house-in -Gomba1.jpeg",
-      "/tei ha/residential-house-in -Gomba2.jpeg",
-      "/tei ha/residential-house-in-GombaPlan.jpeg"
+      "/tei ha pics/Residential-Obed-BenPlan.jpeg",
+      "/tei ha pics/Residential-Obed-Ben.jpeg",
+      "/tei ha pics/Residential-Obed-Ben1.jpeg",
+      "/tei ha pics/Residential-Obed-Ben2.jpeg",
+      "/tei ha pics/Residential-Obed-BenP3.jpeg"
     ],
     videos: [],
     constructionMilestones: [
       {
         title: "Design & Planning",
         description: "Creating the plans for the countryside residence.",
-        image: "/tei ha/residential-house-in-GombaPlan.jpeg"
+        image: "/tei ha pics/Residential-Obed-BenPlan3.jpeg"
       },
       {
         title: "Construction",
         description: "Building the family home.",
-        image: "/tei ha/residential-house-in -Gomba1.jpeg"
+        image: "/tei ha pics/Residential-Obed-Ben3.jpeg"
       }
     ],
     servicesUsed: ["Design & Build", "Architecture", "Project Management", "Construction"],
@@ -493,7 +493,7 @@ export const PROJECTS: Project[] = [
     client: "Mr. Eyotre Julias",
     status: "Completed",
     year: 2024,
-    heroImage: "/tei ha/residential-house-of-Mr. Eyotre2 .jpeg",
+    heroImage: "/tei ha pics/Mr. Eyotre-JuliasPlan2.jpeg",
     heroVideo: undefined,
     description: "Complete Design & Build of a modern residential home in Busukuma Town.",
     clientVision: "To build a modern residential home through complete Design & Build services.",
@@ -502,21 +502,21 @@ export const PROJECTS: Project[] = [
     designJourney: "From concept through construction with full design and build services.",
     projectOutcome: "Completed modern residential home in Busukuma Town.",
     gallery: [
-      "/tei ha/residential-house-of-Mr. Eyotre2 .jpeg",
-      "/tei ha/residential-house-of-Mr. Eyotre.jpeg",
-      "/tei ha/residential-house-of-Mr. Eyotre2  (Copy).jpeg"
+      "/tei ha pics/Residential-Obed-Ben.jpeg",
+      "/tei ha pics/Residential-Obed-Ben1.jpeg",
+      "/tei ha pics/Residential-Obed-Ben3.jpeg"
     ],
     videos: [],
     constructionMilestones: [
       {
         title: "Concept Development",
         description: "Creating the concept for the modern residence.",
-        image: "/tei ha/residential-house-of-Mr. Eyotre.jpeg"
+        image: "/tei ha pics/Residential-Obed-BenPlan3.jpeg"
       },
       {
         title: "Construction",
         description: "Building the home to high standards.",
-        image: "/tei ha/residential-house-of-Mr. Eyotre2 .jpeg"
+        image: "/tei ha pics/Residential-Obed-Ben2.jpeg"
       }
     ],
     servicesUsed: ["Design & Build", "Architecture", "Engineering", "Construction"],
@@ -537,7 +537,7 @@ export const PROJECTS: Project[] = [
     client: "Mr. Kitonsa Alexander",
     status: "Completed",
     year: 2024,
-    heroImage: "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1 (Copy).jpeg",
+    heroImage: "/tei ha pics/Design-and-Build-of-KA-Building-of-MrKitonsa-Alexander.jpeg",
     heroVideo: undefined,
     description: "A commercial development designed to support the area's growing economic activity.",
     clientVision: "To create a commercial property that supports the growing economic activity in Nabweru South.",
@@ -546,23 +546,16 @@ export const PROJECTS: Project[] = [
     designJourney: "Complete Design & Build from architectural design through construction management.",
     projectOutcome: "Completed modern commercial property in Nabweru South.",
     gallery: [
-      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1 (Copy).jpeg",
-      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1.jpeg",
-      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa3.jpeg",
-      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa.jpeg"
+      "/tei ha pics/Design-and-Build-of-KA-Building-of-MrKitonsa-Alexander.jpeg"
     ],
     videos: [],
     constructionMilestones: [
       {
         title: "Architectural Design",
         description: "Creating the design for the business center.",
-        image: "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1 (Copy).jpeg"
-      },
-      {
-        title: "Construction",
-        description: "Building the commercial property.",
-        image: "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa3.jpeg"
+        image: "/tei ha pics/Design-and-Build-of-KA-Building-of-MrKitonsa-Alexander1.jpeg"
       }
+     
     ],
     servicesUsed: ["Design & Build", "Architecture", "Engineering", "Construction Management"],
     aiContribution: [],

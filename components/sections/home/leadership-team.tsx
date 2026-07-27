@@ -10,8 +10,8 @@ const TEAM_MEMBERS = [
     name: "Bwanika Shafiiki",
     position: "Managing Director & Civil Engineer",
     bio: "Leading with vision and 8+ years of engineering excellence, Bwanika drives TEI-HA's strategic initiatives to deliver world-class construction and architecture solutions across Africa and beyond.",
-    avatarSrc: "/tei ha pics/Shafik.jpeg",
-    imageStyle: { objectPosition: "center calc(50% - 8.5px)" } // Move image up by 2.5px
+    avatarSrc: "/tei ha pics/Shafik-Bwanika.jpeg",
+    imageStyle: { objectPosition: "center center" }
   },
   {
     name: "Anand Chokis",

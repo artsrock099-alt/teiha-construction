@@ -25,9 +25,9 @@ const FEATURED_PROJECTS = [
     size: "small",
   },
   {
-    title: "Residential House in Gomba",
-    description: "Design and Build residential house in Gomba, Maddu, Nakitembe - Obed Ben parents house",
-    imageUrl: "/tei ha pics/Residential-Obed-Ben1.jpeg",
+    title: "Residential House in Namulonge -Buso.",
+    description: "Design and Build residential house in Namulonge -Buso trading center, Nansana Municipality of Mr. Anaku Patrick built on Plot 2490, Block 155.",
+    imageUrl: "/tei ha pics/Residential-house-of-MrAnaku1.jpeg",
     isPdf: false,
     size: "small",
   },
@@ -40,9 +40,9 @@ const FEATURED_PROJECTS = [
   },
   {
     title: "Kiwanuka Mosque Plan",
-    description: "Architectural plan for Kiwanuka Mosque",
-    imageUrl: "/tei ha pics/Mosque Kiwanuka.pdf",
-    isPdf: true,
+    description: "UMSC Mega project Kyazanga town council, Nakateete Ward",
+    imageUrl: "/tei ha pics/MosquePlan.jpeg",
+    isPdf: false,
     size: "small",
   },
   {
@@ -92,7 +92,7 @@ const HOSPITALITY_PROJECTS = [
 const INDUSTRIAL_PROJECTS = [
   { imageUrl: "/tei ha pics/industrial2.jpeg" },
   { imageUrl: "/tei ha pics/Ntake-Oil-mills4.jpeg" },
-  { videoUrl: "/tei ha pics/Innovation-of-MIAU-showroom.jpeg" },
+  { videoUrl: "/tei ha pics/REnnovation1.mp4" },
   { imageUrl: "/tei ha pics/REnnovation7.jpeg" },
   { imageUrl: "/tei ha pics/Ntake-Oil-mills5.jpeg" },
   { imageUrl: "/tei ha pics/industrial4.jpeg" },
