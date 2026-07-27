@@ -43,7 +43,7 @@ export function ProjectCard({
               {category}
             </Badge>
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
+              <h3 className="text-xl md:text-2xl font-bold mb-2 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]" style={{ color: "#d4a017" }}>
                 {title}
               </h3>
               <p className="text-white/80 text-sm mb-3">{location}</p>

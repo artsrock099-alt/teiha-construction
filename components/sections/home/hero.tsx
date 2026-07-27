@@ -73,10 +73,16 @@ export function Hero() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <Stagger>
           <FadeUp className="text-center max-w-4xl mx-auto mb-10 md:mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 md:mb-6 leading-tight text-white" 
-                style={{ textShadow: "0 4px 20px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.3)" }}>
-              Building Tomorrow's{" "}
-              <span className="text-cyan-300" style={{ textShadow: "0 4px 20px rgba(34,211,238,0.3), 0 2px 6px rgba(0,0,0,0.3)" }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 md:mb-6 leading-tight text-white" 
+                style={{ 
+                  textShadow: "0 2px 4px rgba(0,0,0,0.9), 0 4px 12px rgba(0,0,0,0.6), 0 8px 24px rgba(0,0,0,0.4)",
+                  WebkitTextStroke: "1px rgba(0,0,0,0.15)",
+                }}>
+              <span style={{ color: "#d4a017" }}>Building Tomorrow's</span>{" "}
+              <span className="text-cyan-300" style={{ 
+                textShadow: "0 2px 4px rgba(0,0,0,0.9), 0 4px 12px rgba(34,211,238,0.4), 0 8px 24px rgba(0,0,0,0.4)",
+                WebkitTextStroke: "1px rgba(0,0,0,0.12)",
+              }}>
                 Intelligent Spaces.
               </span>
             </h1>

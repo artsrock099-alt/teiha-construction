@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
     client: "ZEMBO Uganda",
     status: "Completed",
     year: 2024,
-    heroImage: "/tei ha/zembo2.jpeg",
+    heroImage: "/tei ha pics/Zembo2.jpeg",
     heroVideo: undefined,
     description: "Expanding ZEMBO's battery swap station network across Uganda to support electric mobility.",
     clientVision: "To construct modern, durable, and highly accessible battery swap stations capable of supporting Uganda's growing electric mobility ecosystem while maintaining consistent branding and quality standards across all locations.",
@@ -61,19 +61,19 @@ export const PROJECTS: Project[] = [
     designJourney: "Our team successfully delivered multiple outdoor battery swap stations including Nakawa Total Station, Mengo RUBIS, Nateete – Bairus Mall, Nakasero – Yujo, and additional locations across Uganda. Beyond new construction, TEI-HA also completed the branding and upgrading of approximately 50 indoor battery swap stations.",
     projectOutcome: "The successful completion of these projects strengthened ZEMBO's operational network and contributed to Uganda's transition toward cleaner and more sustainable urban mobility.",
     gallery: [
-      "/tei ha/zembo2.jpeg",
-      "/tei ha/zembo1.jpeg",
-      "/tei ha/zembo3.jpeg",
-      "/tei ha/Zembo-Nakasero.jpeg",
+      "/tei ha pics/ZemboAfter.jpeg",
+      "/tei ha pics/Zembo4.jpeg.jpeg",
+      "/tei ha pics/Zembo3.jpeg",
+      "/tei ha pics/Zembo-Nakasero-at-Yujo1.jpeg",
       "/tei ha/ZemboNakasero1.jpeg",
-      "/tei ha/Zembo-renovation.jpeg"
+  
     ],
     videos: [],
     constructionMilestones: [
       {
         title: "Site Preparation",
-        description: "Clearing and preparing sites across multiple locations for construction.",
-        image: "/tei ha/zembo1.jpeg"
+        description: "Clearing and preparing site location for construction.",
+        image: "/tei ha pics/ZemboBefore.jpeg"
       },
       {
         title: "Structural Works",
@@ -83,7 +83,7 @@ export const PROJECTS: Project[] = [
       {
         title: "Branding & Finishing",
         description: "Implementing consistent ZEMBO branding across all locations.",
-        image: "/tei ha/Zembo-Nakasero.jpeg"
+        image: "/tei ha pics/Zembo-Mego.jpeg"
       }
     ],
     servicesUsed: ["Civil Construction", "Site Preparation", "Branding & Upgrades"],
@@ -107,8 +107,8 @@ export const PROJECTS: Project[] = [
     client: "Mr. Gareeba Alosysious",
     status: "In Progress",
     year: 2024,
-    heroImage: "/tei ha/commercial-building3d.jpeg",
-    heroVideo: "/tei ha/Commercialbuilding-vid.mp4",
+    heroImage: "/tei ha pics/hero17.jpeg",
+    heroVideo: "/tei ha pics/GA-Vid.mp4",
     description: "A modern commercial development designed to support the growing business community in Busukuma.",
     clientVision: "To create a commercial building that would not only maximize the value of the property but also become a landmark business facility serving the expanding Busukuma Township.",
     theChallenge: "Designing and constructing a modern commercial building that meets both functional and aesthetic requirements for a growing area.",
@@ -116,17 +116,23 @@ export const PROJECTS: Project[] = [
     designJourney: "Architectural planning, engineering design, and structural execution with professional management ensuring quality and timeliness.",
     projectOutcome: "The project continues to progress under TEI-HA's professional management, ensuring quality workmanship, timely execution, and strict adherence to engineering standards.",
     gallery: [
-      "/tei ha/commercial-building3d.jpeg",
-      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1 (Copy).jpeg",
-      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa1.jpeg",
-      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa3.jpeg",
-      "/tei ha/Design-and-Build-of-K.A-Building-of-Mr.Kitonsa.jpeg"
+      "/tei ha pics/Commercial-Building-3D.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma1.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma2.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma4.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma5.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma6.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma7.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma8.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma9.jpeg",
+      "/tei ha pics/Commercial-Building-Busukuma3.jpeg"
     ],
     videos: [
       {
         title: "Construction Progress",
-        thumbnail: "/tei ha/commercial-building3d.jpeg",
-        src: "/tei ha/Commercialbuilding-vid.mp4"
+        thumbnail: "/tei ha pics/Commercial-Building-3D.jpeg",
+        src: "/tei ha pics/ga-vid.mp4"
       }
     ],
     constructionMilestones: [
@@ -154,8 +160,8 @@ export const PROJECTS: Project[] = [
     client: "Mr. Patrick Anaku",
     status: "Completed",
     year: 2024,
-    heroImage: "/tei ha/anaku's residence-plan.jpeg",
-    heroVideo: "/tei ha/Anaku-vid.mp4",
+    heroImage: "/tei ha pics/AnakuREsidencePlan.jpeg",
+    heroVideo: "/tei ha pics/Anaku.mp4",
     description: "A custom-designed modern family home tailored to both present needs and future expansion.",
     clientVision: "To have a comfortable, modern family residence tailored to both present needs and future expansion.",
     theChallenge: "Creating a custom home that perfectly balances current family needs with future growth potential.",
@@ -163,28 +169,28 @@ export const PROJECTS: Project[] = [
     designJourney: "From initial concept to final finishing with integrated design and build services.",
     projectOutcome: "The completed home reflects the client's vision while maintaining structural integrity, functionality, and aesthetic appeal.",
     gallery: [
-      "/tei ha/anaku's residence-plan.jpeg",
-      "/tei ha/residential-mrAnaku.jpeg",
-      "/tei ha/anaku1.jpeg",
-      "/tei ha/anaku3.jpeg"
+      "/tei ha pics/Residential-house-of-MrAnaku2.jpeg",
+      "/tei ha pics/Residential-house-of-MrAnaku3.jpeg",
+      "/tei ha pics/Residential-house-of-MrAnakuPlan.jpeg",
+      "/tei ha pics/Residential-house-of-MrAnaku4.jpeg"
     ],
     videos: [
       {
-        title: "Home Tour",
-        thumbnail: "/tei ha/anaku's residence-plan.jpeg",
-        src: "/tei ha/Anaku-vid.mp4"
+        title: "Construction Progress",
+        thumbnail: "/tei ha pics/Residential-house-of-MrAnaku1.jpeg",
+        src: "/tei ha pics/Residential-house-of-MrAnaku.mp4"
       }
     ],
     constructionMilestones: [
       {
         title: "Design Phase",
         description: "Creating custom architectural plans tailored to the family's needs.",
-        image: "/tei ha/anaku's residence-plan.jpeg"
+        image: "/tei ha pics/Residential-house-of-MrAnakuPlan1.jpeg"
       },
       {
         title: "Construction",
         description: "Building the home with attention to detail and quality.",
-        image: "/tei ha/residential-mrAnaku.jpeg"
+        image: "/tei ha pics/Residential-house-of-MrAnaku2.jpeg"
       }
     ],
     servicesUsed: ["Design & Build", "Architecture", "Engineering", "Construction"],
@@ -205,8 +211,8 @@ export const PROJECTS: Project[] = [
     client: "Mr. Kato Umar",
     status: "Completed",
     year: 2023,
-    heroImage: "/tei ha/Kato-residentail1.jpeg",
-    heroVideo: "/tei ha/kato-vid.mp4",
+    heroImage: "/tei ha pics/Kato's-site.jpeg",
+    heroVideo: "/tei ha pics/Kato's-site5.mp4",
     description: "A modern residence resulting from a complete redesign and project recovery.",
     clientVision: "To have a modern home that exceeded expectations after an initial project fell short.",
     theChallenge: "The client had initially contracted another construction company whose pre-construction services failed to meet expectations. The project required a complete redesign and renewed technical direction.",
@@ -214,29 +220,29 @@ export const PROJECTS: Project[] = [
     designJourney: "Complete redesign and project recovery from initial concept through construction supervision.",
     projectOutcome: "The result was a modern residence that exceeded the client's expectations and restored confidence in the project.",
     gallery: [
-      "/tei ha/Kato-residentail1.jpeg",
-      "/tei ha/kato2.jpeg",
-      "/tei ha/kato3.jpeg",
-      "/tei ha/kato4.jpeg",
-      "/tei ha/kato5.jpeg"
+      "/tei ha pics/Kato's-site1.jpeg",
+      "/tei ha pics/Kato's-site2.jpeg",
+      "/tei ha pics/Kato's-site3.jpeg",
+      "/tei ha pics/Kato's-site4.jpeg",
+      "/tei ha pics/Kato's-site5.jpeg"
     ],
     videos: [
       {
         title: "Completed Home",
-        thumbnail: "/tei ha/Kato-residentail1.jpeg",
-        src: "/tei ha/kato-vid.mp4"
+        thumbnail: "/tei ha pics/Kato's-site6.jpeg",
+        src: "/tei ha pics/Kato's-site12.mp4"
       }
     ],
     constructionMilestones: [
       {
         title: "Project Recovery & Redesign",
         description: "Taking over and completely redesigning the project.",
-        image: "/tei ha/kato2.jpeg"
+        image: "/tei ha pics/Kato's-site7.jpeg"
       },
       {
         title: "Construction",
         description: "Building the redesigned home with quality craftsmanship.",
-        image: "/tei ha/Kato-residentail1.jpeg"
+        image: "/tei ha pics/Kato's-site7.jpeg"
       }
     ],
     servicesUsed: ["Project Recovery", "Redesign", "Architecture", "Construction Supervision"],
@@ -257,8 +263,8 @@ export const PROJECTS: Project[] = [
     client: "Soleil Power",
     status: "Completed",
     year: 2024,
-    heroImage: "/tei ha/UpgradingSoleilPower1 .jpeg",
-    heroVideo: "/tei ha/UpgradingSoleilPower-vid.mp4",
+    heroImage: "/tei ha pics/Upgrading-Soleil-Power2.jpeg",
+    heroVideo: "/tei ha pics/Upgrading-Soleil-Power.mp4",
     description: "Upgrading the Soleil Power showroom to enhance customer experience and brand presentation.",
     clientVision: "To create an enhanced showroom experience that reflects Soleil Power's brand identity.",
     theChallenge: "Renovating an existing space to improve customer experience while maintaining operations.",
@@ -266,21 +272,21 @@ export const PROJECTS: Project[] = [
     designJourney: "Renovation focusing on finishes, layout optimization, and branding.",
     projectOutcome: "Enhanced showroom with improved customer experience and modern branding.",
     gallery: [
-      "/tei ha/UpgradingSoleilPower1 .jpeg",
-      "/tei ha/Upgrading-Soleil-Power .jpeg"
+      "/tei ha pics/Upgrading-Soleil-Power1.jpeg",
+      "/tei ha pics/Upgrading-Soleil-Power2.jpeg"
     ],
     videos: [
       {
         title: "Showroom Tour",
-        thumbnail: "/tei ha/UpgradingSoleilPower1 .jpeg",
-        src: "/tei ha/UpgradingSoleilPower-vid.mp4"
+        thumbnail: "/tei ha pics/Upgrading-Soleil-Power2.jpeg",
+        src: "/tei ha pics/Upgrading-Soleil-Power.mp4"
       }
     ],
     constructionMilestones: [
       {
         title: "Renovation & Upgrades",
         description: "Implementing new finishes and branding elements.",
-        image: "/tei ha/UpgradingSoleilPower1 .jpeg"
+        image: "/tei ha pics/Upgrading-Soleil-Power2.jpeg"
       }
     ],
     servicesUsed: ["Commercial Interior Renovation", "Branding", "Layout Optimization"],
@@ -301,8 +307,8 @@ export const PROJECTS: Project[] = [
     client: "Mr. & Mrs. Mukontanyi Didas and Atuhaire Naume",
     status: "Completed",
     year: 2024,
-    heroImage: "/tei ha/Naume-residentialplan2.jpeg",
-    heroVideo: "/tei ha/Residential-houseBukalango-vid.mp4",
+    heroImage: "/tei ha pics/Naume-Residential10plan.jpeg",
+    heroVideo: "/tei ha pics/Atuhaire-Naume-Residential.jpeg",
     description: "Complete Design & Build of a modern family residence in Bukalango–Kakiri.",
     clientVision: "To build a modern family home through a complete design and build service.",
     theChallenge: "Delivering a complete Design & Build project with seamless coordination from concept to completion.",
@@ -311,20 +317,19 @@ export const PROJECTS: Project[] = [
     projectOutcome: "A completed modern family residence in Bukalango–Kakiri.",
     gallery: [
       "/tei ha/Naume-residentialplan2.jpeg",
-      "/tei ha/Naume-residential.jpeg",
-      "/tei ha/Naume-residential2.jpeg",
-      "/tei ha/Naume-residential3.jpeg",
-      "/tei ha/Naume-residential4.jpeg",
-      "/tei ha/Naume-residential-foundation.jpeg",
-      "/tei ha/Naume-residentialPlan.jpeg",
-      "/tei ha/Naume-residentialplan3.jpeg.jpeg",
-      "/tei ha/Residentialhouse-Bukalango1.jpeg",
-      "/tei ha/Residentialhouse-Bukalango2.jpeg"
+      "/tei ha pics/Naume-Residential3.jpeg",
+      "/tei ha pics/Naume-Residential8.jpeg",
+      "/tei ha pics/Naume-Residential9.jpeg",
+      "/tei ha pics/Naume-Residential10plan.jpeg",
+      "/tei ha pics/Naume-ResidentialPlan6.jpeg.jpeg",
+      "/tei ha pics/Naume-Residential10.jpeg",
+      "/tei ha pics/Naume-Residential9plan.jpeg"
+
     ],
     videos: [
       {
-        title: "Home Tour",
-        thumbnail: "/tei ha/Residentialhouse-Bukalango1.jpeg",
+        title: "Construction Progress",
+        thumbnail: "/tei ha pics/Naume-Residential5.jpeg",
         src: "/tei ha/Residential-houseBukalango-vid.mp4"
       }
     ],
@@ -332,17 +337,17 @@ export const PROJECTS: Project[] = [
       {
         title: "Foundation Works",
         description: "Laying the foundation for the residence.",
-        image: "/tei ha/Naume-residential-foundation.jpeg"
+        image: "/tei ha pics/Naume-Residential4.jpeg"
       },
       {
         title: "Structural Frame",
         description: "Building the structural frame of the home.",
-        image: "/tei ha/Naume-residential2.jpeg"
+        image: "/tei ha pics/Naume-Residential.jpeg"
       },
       {
         title: "Finishing",
         description: "Final finishes and completion of the residence.",
-        image: "/tei ha/Residentialhouse-Bukalango1.jpeg"
+        image: "/tei ha pics/Naume-Residential7.jpeg"
       }
     ],
     servicesUsed: ["Design & Build", "Architecture", "Engineering", "Project Management", "Construction"],
