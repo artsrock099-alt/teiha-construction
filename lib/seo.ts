@@ -413,21 +413,6 @@ export function reviewSchema() {
 }
 
 /**
- * AggregateRating schema for overall business rating.
- */
-export function aggregateRatingSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "AggregateRating",
-    itemReviewed: { "@type": "LocalBusiness", name: SITE_CONFIG.name },
-    ratingValue: "4.9",
-    bestRating: "5",
-    ratingCount: "10",
-    reviewCount: "10",
-  };
-}
-
-/**
  * Generate all schemas combined into a single array for the root layout.
  */
 export function generateRootSchemas() {
@@ -439,7 +424,6 @@ export function generateRootSchemas() {
       { name: "Home", url: `${SITE_CONFIG.url}/` },
     ]),
     reviewSchema(),
-    aggregateRatingSchema(),
   ];
 }
 
