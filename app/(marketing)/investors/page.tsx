@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Investors | TEI-HA Construction Services Ltd",
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
     "Architecture Investment Africa",
     "Real Estate Development Investment",
   ],
+  alternates: {
+    canonical: `${SITE_CONFIG.url}/investors`,
+  },
 };
 
 export default function InvestorsPage() {

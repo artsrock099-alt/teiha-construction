@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_CONFIG } from "@/lib/constants";
 import { Hero } from "@/components/sections/home/hero";
 import { TrustedBy } from "@/components/sections/home/trusted-by";
 import { CompanyIntro } from "@/components/sections/home/company-intro";
@@ -37,6 +38,9 @@ export const metadata: Metadata = {
     description:
       "Uganda's premier AI-powered architecture and construction company. Design & build, project management, and sustainable construction across East Africa.",
     type: "website",
+  },
+  alternates: {
+    canonical: `${SITE_CONFIG.url}/`,
   },
 };
 

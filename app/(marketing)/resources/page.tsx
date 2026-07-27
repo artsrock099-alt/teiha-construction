@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Resources | TEI-HA Construction Services Ltd",
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
     "Construction Whitepapers",
     "AI Construction Resources",
   ],
+  alternates: {
+    canonical: `${SITE_CONFIG.url}/resources`,
+  },
 };
 
 export default function ResourcesPage() {

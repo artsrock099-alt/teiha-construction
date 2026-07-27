@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { SITE_CONFIG } from "@/lib/constants";
 import { AboutHero } from "@/components/sections/about/hero";
 import { OurStory } from "@/components/sections/about/our-story";
 import { MissionVisionValues } from "@/components/sections/about/mission-vision-values";
@@ -16,6 +17,9 @@ export const metadata: Metadata = {
   title: "About TEI-HA Construction Services Ltd | Architecture & Construction Company Uganda",
   description: "TEI-HA Construction Services Ltd is a leading Ugandan construction company and architectural consulting firm delivering technology-driven services. Specializing in project planning, design, surveying, and AI construction solutions in Africa.",
   keywords: ["About TEI-HA Construction Services Ltd", "Architecture Company Uganda", "Construction Company Uganda", "Engineering Consultancy Uganda", "AI Construction Solutions Africa"],
+  alternates: {
+    canonical: `${SITE_CONFIG.url}/about`,
+  },
 };
 
 export default function AboutPage() {

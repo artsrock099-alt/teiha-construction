@@ -18,8 +18,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await props.params;
+  const project = getProjectBySlug(slug);
   if (!project) return {};
 
   return {
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       images: [{ url: project.heroImage, width: 1200, height: 630 }],
     },
     alternates: {
-      canonical: `${SITE_CONFIG.url}/projects/${project.slug}`,
+      canonical: `${SITE_CONFIG.url}/projects/${slug}`,
     },
   };
 }
