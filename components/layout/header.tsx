@@ -11,7 +11,7 @@ import { ServicesMegaMenu } from "./services-mega-menu";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "About Us", href: "/about" },
   { name: "Services", href: "/services", hasMegaMenu: true },
   { name: "Projects", href: "/projects" },
   { name: "AI Studio", href: "/ai-studio" },
@@ -58,8 +58,8 @@ export function Header() {
               priority
             />
             <div className="flex flex-col">
-              <span className="text-lg md:text-xl font-bold font-[Plus_Jakarta_Sans] tracking-tight" style={{ color: "#d4a017" }}>
-                TEI-HA CONSTRUCTION SERVICES Ltd.
+              <span className="text-sm md:text-base font-bold font-[Plus_Jakarta_Sans] tracking-tight" style={{ color: "#d4a017" }}>
+                TEI-HA CONSTRUCTION SERVICES LIMITED
               </span>
               <span className="hidden md:block text-xs text-muted-foreground">
                 Quality Is Our Priority
