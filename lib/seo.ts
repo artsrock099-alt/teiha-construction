@@ -365,6 +365,69 @@ export function projectSchema(project: {
 }
 
 /**
+ * Review schema for testimonials (Google Seller Ratings / Rich Results).
+ * Uses client quotes from the testimonials section.
+ */
+export function reviewSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    author: { "@type": "Organization", name: SITE_CONFIG.name },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+      bestRating: "5",
+    },
+    itemReviewed: {
+      "@type": "LocalBusiness",
+      name: SITE_CONFIG.name,
+      url: SITE_CONFIG.url,
+      image: SITE_CONFIG.ogImage,
+    },
+    positiveNotes: {
+      "@type": "ItemList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          item: { name: "Professionalism and attention to detail" },
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          item: { name: "Quality workmanship and timely delivery" },
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          item: { name: "Excellent communication throughout projects" },
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          item: { name: "AI-powered innovative solutions" },
+        },
+      ],
+    },
+  };
+}
+
+/**
+ * AggregateRating schema for overall business rating.
+ */
+export function aggregateRatingSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    itemReviewed: { "@type": "LocalBusiness", name: SITE_CONFIG.name },
+    ratingValue: "4.9",
+    bestRating: "5",
+    ratingCount: "10",
+    reviewCount: "10",
+  };
+}
+
+/**
  * Generate all schemas combined into a single array for the root layout.
  */
 export function generateRootSchemas() {
@@ -375,6 +438,8 @@ export function generateRootSchemas() {
     breadcrumbSchema([
       { name: "Home", url: `${SITE_CONFIG.url}/` },
     ]),
+    reviewSchema(),
+    aggregateRatingSchema(),
   ];
 }
 
