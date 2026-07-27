@@ -1,3 +1,17 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Investors | TEI-HA Construction Services Ltd",
+  description:
+    "Investment opportunities with TEI-HA Construction Services Ltd. Join us in shaping the future of AI-powered construction and architecture in East Africa.",
+  keywords: [
+    "TEI-HA Investors",
+    "Construction Investment Uganda",
+    "Architecture Investment Africa",
+    "Real Estate Development Investment",
+  ],
+};
+
 export default function InvestorsPage() {
   return (
     <div className="flex flex-col items-center justify-center py-32 px-6">

@@ -1,11 +1,13 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { FadeUp } from "@/lib/animations";
 import { PROJECTS, getProjectBySlug } from "@/lib/constants/projects";
+import { SITE_CONFIG } from "@/lib/constants";
 import { ProjectGallery } from "@/components/sections/ProjectGallery";
 import { ProjectVideos } from "@/components/sections/ProjectVideos";
 import { ProjectCard } from "@/components/cards/project-card";
@@ -14,6 +16,30 @@ export async function generateStaticParams() {
   return PROJECTS.map((project) => ({
     slug: project.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const project = getProjectBySlug(params.slug);
+  if (!project) return {};
+
+  return {
+    title: project.seo?.title || `${project.title} | ${SITE_CONFIG.name}`,
+    description: project.seo?.description || project.description,
+    keywords: project.seo?.keywords?.join(", ") || [
+      project.title,
+      project.category,
+      "Construction Uganda",
+      project.location,
+    ].join(", "),
+    openGraph: {
+      title: project.seo?.title || `${project.title} | ${SITE_CONFIG.name}`,
+      description: project.seo?.description || project.description,
+      images: [{ url: project.heroImage, width: 1200, height: 630 }],
+    },
+    alternates: {
+      canonical: `${SITE_CONFIG.url}/projects/${project.slug}`,
+    },
+  };
 }
 
 export default async function ProjectPage(props: { params: Promise<{ slug: string }> }) {
@@ -30,6 +56,44 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
 
   return (
     <div className="min-h-screen">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": project.status === "Completed" ? "LandmarksOrHistoricalBuildings" : "Construction",
+                name: project.title,
+                description: project.description,
+                url: `${SITE_CONFIG.url}/projects/${project.slug}`,
+                image: project.heroImage,
+                ...(project.location && {
+                  location: {
+                    "@type": "Place",
+                    name: project.location,
+                  },
+                }),
+                ...(project.year && { dateCreated: `${project.year}` }),
+                provider: {
+                  "@type": "Organization",
+                  name: SITE_CONFIG.name,
+                  url: SITE_CONFIG.url,
+                },
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Home", item: SITE_CONFIG.url },
+                  { "@type": "ListItem", position: 2, name: "Projects", item: `${SITE_CONFIG.url}/projects` },
+                  { "@type": "ListItem", position: 3, name: project.title, item: `${SITE_CONFIG.url}/projects/${project.slug}` },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       {/* Hero Section */}
       <section className="relative pt-20 md:pt-24">
         {/* Back to Projects */}

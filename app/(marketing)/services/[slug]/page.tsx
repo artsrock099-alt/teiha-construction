@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -6,12 +7,32 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SERVICES, getServiceBySlug } from "@/lib/constants/services";
+import { SITE_CONFIG } from "@/lib/constants";
 import { FadeUp } from "@/lib/animations";
 
 export async function generateStaticParams() {
   return SERVICES.map((service) => ({
     slug: service.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const service = getServiceBySlug(params.slug);
+  if (!service) return {};
+
+  return {
+    title: service.seo.title || `${service.title} | ${SITE_CONFIG.name}`,
+    description: service.seo.description || service.shortDescription,
+    keywords: service.seo.keywords?.join(", "),
+    openGraph: {
+      title: service.seo.title || `${service.title} | ${SITE_CONFIG.name}`,
+      description: service.seo.description || service.shortDescription,
+      images: [{ url: service.imagePlaceholder, width: 1200, height: 630 }],
+    },
+    alternates: {
+      canonical: `${SITE_CONFIG.url}/services/${service.slug}`,
+    },
+  };
 }
 
 export default function ServicePage({ params }: { params: { slug: string } }) {
@@ -27,8 +48,52 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
   const Icon = service.icon;
 
+  // JSON-LD for Service + FAQ
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: service.title,
+        description: service.shortDescription,
+        url: `${SITE_CONFIG.url}/services/${service.slug}`,
+        image: service.imagePlaceholder,
+        provider: {
+          "@type": "Organization",
+          name: SITE_CONFIG.name,
+          url: SITE_CONFIG.url,
+        },
+        areaServed: SITE_CONFIG.business.areaServed.join(", "),
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: service.faq.map((q) => ({
+          "@type": "Question",
+          name: q.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: q.answer,
+          },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_CONFIG.url },
+          { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_CONFIG.url}/services` },
+          { "@type": "ListItem", position: 3, name: service.title, item: `${SITE_CONFIG.url}/services/${service.slug}` },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-muted/50" />

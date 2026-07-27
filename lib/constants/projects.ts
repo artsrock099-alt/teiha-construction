@@ -62,10 +62,9 @@ export const PROJECTS: Project[] = [
     projectOutcome: "The successful completion of these projects strengthened ZEMBO's operational network and contributed to Uganda's transition toward cleaner and more sustainable urban mobility.",
     gallery: [
       "/tei ha pics/ZemboAfter.jpeg",
-      "/tei ha pics/Zembo4.jpeg.jpeg",
       "/tei ha pics/Zembo3.jpeg",
       "/tei ha pics/Zembo-Nakasero-at-Yujo1.jpeg",
-      "/tei ha/ZemboNakasero1.jpeg",
+    
   
     ],
     videos: [],
@@ -78,12 +77,12 @@ export const PROJECTS: Project[] = [
       {
         title: "Structural Works",
         description: "Constructing durable station structures to withstand high traffic.",
-        image: "/tei ha/zembo3.jpeg"
+        image: "/tei ha pics/Zembo3.jpeg"
       },
       {
         title: "Branding & Finishing",
         description: "Implementing consistent ZEMBO branding across all locations.",
-        image: "/tei ha pics/Zembo-Mego.jpeg"
+        image: "/tei ha pics/ZemboAfter.jpeg"
       }
     ],
     servicesUsed: ["Civil Construction", "Site Preparation", "Branding & Upgrades"],
@@ -108,7 +107,6 @@ export const PROJECTS: Project[] = [
     status: "In Progress",
     year: 2024,
     heroImage: "/tei ha pics/hero17.jpeg",
-    heroVideo: "/tei ha pics/GA-Vid.mp4",
     description: "A modern commercial development designed to support the growing business community in Busukuma.",
     clientVision: "To create a commercial building that would not only maximize the value of the property but also become a landmark business facility serving the expanding Busukuma Township.",
     theChallenge: "Designing and constructing a modern commercial building that meets both functional and aesthetic requirements for a growing area.",
@@ -123,8 +121,6 @@ export const PROJECTS: Project[] = [
       "/tei ha pics/Commercial-Building-Busukuma4.jpeg",
       "/tei ha pics/Commercial-Building-Busukuma5.jpeg",
       "/tei ha pics/Commercial-Building-Busukuma6.jpeg",
-      "/tei ha pics/Commercial-Building-Busukuma7.jpeg",
-      "/tei ha pics/Commercial-Building-Busukuma8.jpeg",
       "/tei ha pics/Commercial-Building-Busukuma9.jpeg",
       "/tei ha pics/Commercial-Building-Busukuma3.jpeg"
     ],
@@ -139,7 +135,7 @@ export const PROJECTS: Project[] = [
       {
         title: "Architectural Design",
         description: "Creating the initial design and 3D renderings for the complex.",
-        image: "/tei ha/commercial-building3d.jpeg"
+        image: "/tei ha pics/hero17.jpeg"
       }
     ],
     servicesUsed: ["Design & Build", "Architecture", "Engineering", "Construction Supervision"],
@@ -161,7 +157,7 @@ export const PROJECTS: Project[] = [
     status: "Completed",
     year: 2024,
     heroImage: "/tei ha pics/AnakuREsidencePlan.jpeg",
-    heroVideo: "/tei ha pics/Anaku.mp4",
+    
     description: "A custom-designed modern family home tailored to both present needs and future expansion.",
     clientVision: "To have a comfortable, modern family residence tailored to both present needs and future expansion.",
     theChallenge: "Creating a custom home that perfectly balances current family needs with future growth potential.",
@@ -212,7 +208,6 @@ export const PROJECTS: Project[] = [
     status: "Completed",
     year: 2023,
     heroImage: "/tei ha pics/Kato's-site.jpeg",
-    heroVideo: "/tei ha pics/Kato's-site5.mp4",
     description: "A modern residence resulting from a complete redesign and project recovery.",
     clientVision: "To have a modern home that exceeded expectations after an initial project fell short.",
     theChallenge: "The client had initially contracted another construction company whose pre-construction services failed to meet expectations. The project required a complete redesign and renewed technical direction.",
@@ -222,9 +217,13 @@ export const PROJECTS: Project[] = [
     gallery: [
       "/tei ha pics/Kato's-site1.jpeg",
       "/tei ha pics/Kato's-site2.jpeg",
-      "/tei ha pics/Kato's-site3.jpeg",
-      "/tei ha pics/Kato's-site4.jpeg",
-      "/tei ha pics/Kato's-site5.jpeg"
+      "/tei ha pics/Kato's-site6.jpeg",
+      "/tei ha pics/Kato's-site7.jpeg",
+      "/tei ha pics/Kato's-site8.jpeg",
+      "/tei ha pics/Kato's-site9.jpeg",
+      "/tei ha pics/Kato's-site10.jpeg",
+      "/tei ha pics/Kato's-site11.jpeg",
+      "/tei ha pics/Kato's-site12.mp4"    
     ],
     videos: [
       {
@@ -242,7 +241,7 @@ export const PROJECTS: Project[] = [
       {
         title: "Construction",
         description: "Building the redesigned home with quality craftsmanship.",
-        image: "/tei ha pics/Kato's-site7.jpeg"
+        image: "/tei ha pics/Kato's-site8.jpeg"
       }
     ],
     servicesUsed: ["Project Recovery", "Redesign", "Architecture", "Construction Supervision"],
@@ -264,7 +263,7 @@ export const PROJECTS: Project[] = [
     status: "Completed",
     year: 2024,
     heroImage: "/tei ha pics/Upgrading-Soleil-Power2.jpeg",
-    heroVideo: "/tei ha pics/Upgrading-Soleil-Power.mp4",
+   
     description: "Upgrading the Soleil Power showroom to enhance customer experience and brand presentation.",
     clientVision: "To create an enhanced showroom experience that reflects Soleil Power's brand identity.",
     theChallenge: "Renovating an existing space to improve customer experience while maintaining operations.",
@@ -308,7 +307,7 @@ export const PROJECTS: Project[] = [
     status: "Completed",
     year: 2024,
     heroImage: "/tei ha pics/Naume-Residential10plan.jpeg",
-    heroVideo: "/tei ha pics/Atuhaire-Naume-Residential.jpeg",
+   
     description: "Complete Design & Build of a modern family residence in Bukalango–Kakiri.",
     clientVision: "To build a modern family home through a complete design and build service.",
     theChallenge: "Delivering a complete Design & Build project with seamless coordination from concept to completion.",
@@ -316,12 +315,12 @@ export const PROJECTS: Project[] = [
     designJourney: "From architectural design to final finishing with full project management.",
     projectOutcome: "A completed modern family residence in Bukalango–Kakiri.",
     gallery: [
-      "/tei ha/Naume-residentialplan2.jpeg",
+      
       "/tei ha pics/Naume-Residential3.jpeg",
       "/tei ha pics/Naume-Residential8.jpeg",
       "/tei ha pics/Naume-Residential9.jpeg",
       "/tei ha pics/Naume-Residential10plan.jpeg",
-      "/tei ha pics/Naume-ResidentialPlan6.jpeg.jpeg",
+      "/tei ha pics/Naume-ResidentialPlan6.jpeg",
       "/tei ha pics/Naume-Residential10.jpeg",
       "/tei ha pics/Naume-Residential9plan.jpeg"
 
@@ -368,7 +367,7 @@ export const PROJECTS: Project[] = [
     client: "Multiple Clients",
     status: "Ongoing",
     year: 2024,
-    heroImage: "/tei ha/Material-supply-and-delivery2.jpeg",
+    heroImage: "/tei ha pics/MaterialSupply.jpeg",
     heroVideo: undefined,
     description: "Beyond construction, TEI-HA provides reliable procurement, logistics, and delivery of quality construction materials for projects of all sizes.",
     clientVision: "To have a reliable partner for quality construction materials and timely delivery.",
@@ -377,8 +376,8 @@ export const PROJECTS: Project[] = [
     designJourney: "Developing and maintaining an efficient supply chain for construction materials.",
     projectOutcome: "Reliable procurement, logistics, and delivery services for projects of all sizes.",
     gallery: [
-      "/tei ha/Material-supply-and-delivery2.jpeg",
-      "/tei ha/Material-supply-and-delivery.jpeg"
+      "/tei ha pics/MaterialSupply.jpeg",
+      "/tei ha pics/Ntake-Oil-mills5.jpeg"
     ],
     videos: [],
     constructionMilestones: [],
@@ -400,7 +399,7 @@ export const PROJECTS: Project[] = [
     client: "Ntake Oil Mills",
     status: "Completed",
     year: 2023,
-    heroImage: "/tei ha/industrial-construction-of-Ntake-Oil-mills .jpeg",
+    heroImage: "/tei ha pics/Ntake-Oil-mills.jpeg",
     heroVideo: undefined,
     description: "TEI-HA's engineering team participated in the construction of the Ntake Oil Mills and Refinery Project.",
     clientVision: "To develop critical industrial infrastructure for one of Uganda's major industrial investments.",
@@ -409,23 +408,23 @@ export const PROJECTS: Project[] = [
     designJourney: "Execution of civil works for road and drainage infrastructure.",
     projectOutcome: "The assigned works achieved approximately 98% successful completion, reflecting our team's technical competence and commitment to quality execution on large-scale industrial projects.",
     gallery: [
-      "/tei ha/industrial-construction-of-Ntake-Oil-mills .jpeg",
-      "/tei ha/industrial-construction-of-Ntake-Oil-mills1.jpeg",
-      "/tei ha/industrial-construction-of-Ntake-Oil-mills2.jpeg",
-      "/tei ha/industrial-construction-of-Ntake-Oil-mills3.jpeg",
-      "/tei ha/industrial-construction-of-Ntake-Oil-mills4.jpeg"
+      "/tei ha pics/Ntake-Oil-mills1.jpeg",
+      "/tei ha pics/Ntake-Oil-mills2.jpeg",
+      "/tei ha pics/Ntake-Oil-mills10.jpeg",
+      "/tei ha pics/Ntake-Oil-mills4.jpeg",
+      "/tei ha pics/Ntake-Oil-mills6.jpeg"
     ],
     videos: [],
     constructionMilestones: [
       {
         title: "Site Works",
         description: "Initial site preparation and civil works.",
-        image: "/tei ha/industrial-construction-of-Ntake-Oil-mills2.jpeg"
+        image: "/tei ha pics/Ntake-Oil-mills3.jpeg"
       },
       {
         title: "Road & Drainage",
         description: "Construction of road and drainage infrastructure.",
-        image: "/tei ha/industrial-construction-of-Ntake-Oil-mills .jpeg"
+        image: "/tei ha pics/Ntake-Oil-mills8.jpeg"
       }
     ],
     servicesUsed: ["Civil Works", "Road Construction", "Drainage Infrastructure", "Industrial Construction"],
@@ -448,7 +447,7 @@ export const PROJECTS: Project[] = [
     client: "Obed Ben Family",
     status: "Completed",
     year: 2024,
-    heroImage: "/tei ha/residential-house-in-GombaPlan2.jpeg",
+    heroImage: "/tei ha pics/Residential-Obed-BenPlan3.jpeg",
     heroVideo: undefined,
     description: "Design & Build project developed as a family residence for the parents of Mr. Obed Ben.",
     clientVision: "To build a family home in Gomba District.",

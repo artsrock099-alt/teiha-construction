@@ -111,6 +111,35 @@ const FAQ = [
 export default function ContactPage() {
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "FAQPage",
+                mainEntity: FAQ.map((q) => ({
+                  "@type": "Question",
+                  name: q.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: q.answer,
+                  },
+                })),
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Home", item: "https://teiha-construction.com" },
+                  { "@type": "ListItem", position: 2, name: "Contact", item: "https://teiha-construction.com/contact" },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-br from-primary/5 via-primary/10 to-primary/20">
         {/* Decorative Elements */}
@@ -208,8 +237,14 @@ export default function ContactPage() {
                      Nansana Municipality along Hoima Rd DT Complex<br />
                     P. O. Box 115420, Wakiso
                   </p>
-                  <Button variant="ghost" className="p-0 mt-2 h-auto text-primary">
-                    Get Directions
+                  <Button variant="ghost" className="p-0 mt-2 h-auto text-primary" asChild>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=TEI-HA+Construction+Services+Nansana+Uganda"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Get Directions on Google Maps →
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -266,6 +301,33 @@ export default function ContactPage() {
                   <p className="text-sm text-body">TIN: 1047520346</p>
                 </CardContent>
               </Card>
+            </FadeUp>
+          </div>
+        </div>
+      </Section>
+
+      {/* Google Maps Embed */}
+      <Section size="xl" variant="muted">
+        <div className="container mx-auto px-6">
+          <SectionHeader
+            title="Find Us on the Map"
+            subtitle="Visit our office in Nansana"
+            className="mb-12"
+          />
+          <div className="max-w-5xl mx-auto">
+            <FadeUp>
+              <div className="rounded-xl overflow-hidden shadow-lg border border-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7583194040885!2d32.5825!3d-0.3476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sNansana!5e0!3m2!1sen!2sug!4v1"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="TEI-HA Construction Services Ltd - Office Location"
+                />
+              </div>
             </FadeUp>
           </div>
         </div>
