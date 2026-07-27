@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   description:
     "AI-powered architecture and construction company based in Uganda, serving clients worldwide. Specializing in architectural design, civil engineering, construction, interior design, and project management with AI-enhanced workflows.",
   url: "https://teihaconstructionservices.com",
-  ogImage: "https://teihaconstructionservices.com/og-image.png",
+  ogImage: "https://teihaconstructionservices.com/opengraph-image.png",
   logo: "/tei ha pics/logo.png",
   sameAs: [
     "https://www.youtube.com/@Tei-haConstructionServices",
@@ -16,11 +16,11 @@ export const SITE_CONFIG = {
     twitter: "https://twitter.com/teiha_construction",
     github: "https://github.com/artsrock099-alt/teiha-construction",
     youtube: "https://www.youtube.com/@Tei-haConstructionServices",
-    whatsapp: "https://wa.me/256741190078",
+    whatsapp: "https://wa.me/256707169796",
   },
   business: {
-    telephone: "+256200911184",
-    whatsapp: "+256741190078",
+    telephone: "+256707169796",
+    whatsapp: "+256707169796",
     email: "teihaconstructionservices@gmail.com",
     address: {
       streetAddress: "Nansana Municipality along Hoima Rd, DT Complex",

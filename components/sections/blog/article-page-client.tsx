@@ -183,6 +183,7 @@ export function ArticlePageClient({ article }: ArticlePageClientProps) {
                         <img
                           src={relatedArticle.featuredImage}
                           alt={relatedArticle.title}
+                          loading="lazy"
                           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                         />
                       </div>
@@ -332,6 +333,7 @@ function ArticleSection({
           <img
             src={section.url}
             alt={section.alt}
+            loading="lazy"
             className="w-full rounded-lg"
           />
           {section.caption && (

@@ -63,6 +63,7 @@ export default function BlogLandingPage() {
                       <img
                         src={featuredArticle.featuredImage}
                         alt={featuredArticle.title}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                       />
                     </div>
@@ -147,6 +148,7 @@ function ArticleCard({ article }: { article: BlogArticle }) {
           <img
             src={article.featuredImage}
             alt={article.title}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>

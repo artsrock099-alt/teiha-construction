@@ -1,0 +1,16 @@
+# TEI-HA CONSTRUCTION SERVICES LTD
+# https://teihaconstructionservices.com
+
+## TEAM
+  Developer: Art Rock
+  Location: Uganda
+
+## TECHNOLOGY
+  Frontend: Next.js, TypeScript, Tailwind CSS
+  Hosting: Vercel
+
+## THANKS
+  Everyone who contributed to this project.
+
+## UPDATED
+  2026-07-27

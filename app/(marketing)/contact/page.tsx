@@ -9,6 +9,7 @@ import { ContactOptionCard } from "@/components/sections/contact/contact-option-
 import { FadeUp } from "@/lib/animations";
 import { GradientBlob } from "@/components/decorative/gradient-blob";
 import { GridBackground } from "@/components/decorative/grid-background";
+import { SITE_CONFIG } from "@/lib/constants";
 import { 
   Mail, 
   Phone, 
@@ -132,8 +133,8 @@ export default function ContactPage() {
               {
                 "@type": "BreadcrumbList",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Home", item: "https://teihaconstructionservices.com" },
-                  { "@type": "ListItem", position: 2, name: "Contact", item: "https://teihaconstructionservices.com/contact" },
+                  { "@type": "ListItem", position: 1, name: "Home", item: SITE_CONFIG.url },
+                  { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE_CONFIG.url}/contact` },
                 ],
               },
             ],
