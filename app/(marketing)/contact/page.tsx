@@ -132,8 +132,8 @@ export default function ContactPage() {
               {
                 "@type": "BreadcrumbList",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Home", item: "https://teiha-construction.com" },
-                  { "@type": "ListItem", position: 2, name: "Contact", item: "https://teiha-construction.com/contact" },
+                  { "@type": "ListItem", position: 1, name: "Home", item: "https://teihaconstructionservices.com" },
+                  { "@type": "ListItem", position: 2, name: "Contact", item: "https://teihaconstructionservices.com/contact" },
                 ],
               },
             ],

@@ -4,8 +4,8 @@ export const SITE_CONFIG = {
   tagline: "Quality Is Our Priority",
   description:
     "AI-powered architecture and construction company based in Uganda, serving clients worldwide. Specializing in architectural design, civil engineering, construction, interior design, and project management with AI-enhanced workflows.",
-  url: "https://teiha-construction.com",
-  ogImage: "https://teiha-construction.com/og-image.png",
+  url: "https://teihaconstructionservices.com",
+  ogImage: "https://teihaconstructionservices.com/og-image.png",
   logo: "/tei ha pics/logo.png",
   sameAs: [
     "https://www.youtube.com/@Tei-haConstructionServices",
