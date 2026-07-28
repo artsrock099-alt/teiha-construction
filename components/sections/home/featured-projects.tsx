@@ -33,13 +33,13 @@ const FEATURED_PROJECTS = [
   },
   {
     title: "Cottage Design",
-    description: "Master plan and cottage design",
+    description: "Master plan and cottage design in  Banda, Mende Sun country, Wakiso district",
     imageUrl: "/tei ha pics/CottageDesign.jpeg",
     isPdf: false,
     size: "small",
   },
   {
-    title: "Kiwanuka Mosque Plan",
+    title: "UMSC multi purpose",
     description: "UMSC Mega project Kyazanga town council, Nakateete Ward",
     imageUrl: "/tei ha pics/MosquePlan.jpeg",
     isPdf: false,
