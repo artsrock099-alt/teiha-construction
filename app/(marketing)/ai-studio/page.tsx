@@ -7,7 +7,7 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { AI_TOOLS, type Status } from "@/lib/constants/ai-tools";
+import { AI_TOOLS, getAIToolIcon, type Status } from "@/lib/constants/ai-tools";
 import { FadeUp } from "@/lib/animations";
 import { ArrowRight } from "lucide-react";
 
@@ -158,7 +158,8 @@ export default function AIStudioPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {AI_TOOLS.map((tool, idx) => {
-              const Icon = tool.icon;
+              const Icon = getAIToolIcon(tool.icon);
+              if (!Icon) return null;
               return (
                 <FadeUp key={tool.slug} delay={idx * 0.05}>
                   <Link href={`/ai-studio/${tool.slug}`} className="block h-full">

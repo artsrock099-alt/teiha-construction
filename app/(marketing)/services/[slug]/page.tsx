@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SERVICES, getServiceBySlug } from "@/lib/constants/services";
+import { SERVICES, getServiceBySlug, getIcon } from "@/lib/constants/services";
 import { SITE_CONFIG } from "@/lib/constants";
 import { FadeUp } from "@/lib/animations";
 
@@ -48,7 +48,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     .map((slug) => SERVICES.find((s) => s.slug === slug))
     .filter(Boolean);
 
-  const Icon = service.icon;
+  const Icon = getIcon(service.icon) || (() => null);
 
   // JSON-LD for Service + FAQ
   const serviceSchema = {
@@ -251,7 +251,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedServices.map((relatedService, idx) => {
               if (!relatedService) return null;
-              const RelatedIcon = relatedService.icon;
+              const RelatedIcon = getIcon(relatedService.icon);
+              if (!RelatedIcon) return null;
               return (
                 <FadeUp key={relatedService.slug} delay={idx * 0.05}>
                   <Link href={`/services/${relatedService.slug}`} className="block h-full">

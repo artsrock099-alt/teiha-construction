@@ -7,7 +7,7 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { AI_TOOLS, type AITool, type Status } from "@/lib/constants/ai-tools";
+import { AI_TOOLS, getAIToolIcon, type AITool, type Status } from "@/lib/constants/ai-tools";
 import { FadeUp } from "@/lib/animations";
 import { ArrowRight } from "lucide-react";
 
@@ -23,12 +23,11 @@ const statusToVariant = (status: Status) => {
 };
 
 interface ToolPageClientProps {
-  tool: Omit<AITool, "icon"> & { slug: string };
+  tool: AITool;
 }
 
 export function ToolPageClient({ tool }: ToolPageClientProps) {
-  const toolData = AI_TOOLS.find((t) => t.slug === tool.slug);
-  const Icon = toolData?.icon;
+  const Icon = getAIToolIcon(tool.icon);
   const relatedTools = tool.relatedTools
     .map((slug) => AI_TOOLS.find((t) => t.slug === slug))
     .filter(Boolean);
@@ -226,7 +225,8 @@ export function ToolPageClient({ tool }: ToolPageClientProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedTools.map((relatedTool, idx) => {
                 if (!relatedTool) return null;
-                const RelatedIcon = relatedTool.icon;
+              const RelatedIcon = getAIToolIcon(relatedTool.icon);
+              if (!RelatedIcon) return null;
                 return (
                   <FadeUp key={relatedTool.slug} delay={idx * 0.05}>
                     <Link href={`/ai-studio/${relatedTool.slug}`} className="block h-full">

@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { SERVICES } from "@/lib/constants/services";
+import { getIcon } from "@/lib/constants/services";
 import { FadeUp } from "@/lib/animations";
 import { ArrowRight } from "lucide-react";
 
@@ -85,7 +86,8 @@ export default function ServicesPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((service, index) => {
-              const Icon = service.icon;
+              const Icon = getIcon(service.icon);
+              if (!Icon) return null;
               return (
                 <FadeUp key={service.slug} delay={index * 0.05}>
                   <Link href={`/services/${service.slug}`} className="block h-full">

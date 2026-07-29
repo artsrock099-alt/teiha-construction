@@ -18,12 +18,37 @@ import {
   ClipboardList,
 } from "lucide-react";
 
+// Icon lookup map — keeps icon as string for serialization safety
+const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Building2,
+  Hammer,
+  Compass,
+  Paintbrush,
+  RefreshCw,
+  Briefcase,
+  Zap,
+  Leaf,
+  Eye,
+  Route,
+  Mountain,
+  Ruler,
+  Droplets,
+  Globe,
+  Cpu,
+  Truck,
+  ClipboardList,
+};
+
+export function getIcon(name: string): React.ComponentType<{ className?: string }> | undefined {
+  return ICON_MAP[name];
+}
+
 export type Service = {
   slug: string;
   title: string;
   shortDescription: string;
   heroDescription: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: string;
   imagePlaceholder: string;
   benefits: string[];
   industries: string[];
@@ -54,7 +79,7 @@ export const SERVICES: Service[] = [
     title: "Architectural Design",
     shortDescription: "Innovative, AI-powered architectural solutions tailored to your vision and site.",
     heroDescription: "Transform your ideas into stunning, functional architectural designs that blend innovation, sustainability, and timeless aesthetics.",
-    icon: Building2,
+    icon: "Building2",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=modern%20architectural%20design%20rendering%20minimalist%20premium&image_size=landscape_16_9",
     benefits: [
       "AI-driven concept generation and optimization",
@@ -94,7 +119,7 @@ export const SERVICES: Service[] = [
     title: "Civil & Structural Engineering",
     shortDescription: "Safe, durable, and cost-effective engineering solutions for buildings and infrastructure.",
     heroDescription: "Professional structural analysis, design, and construction engineering that ensures every project is built on a foundation of safety and performance.",
-    icon: Compass,
+    icon: "Compass",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=civil%20structural%20engineering%20blueprint%20professional&image_size=landscape_16_9",
     benefits: [
       "Structural design and analysis",
@@ -133,7 +158,7 @@ export const SERVICES: Service[] = [
     title: "Construction Services",
     shortDescription: "End-to-end construction delivery with international quality standards.",
     heroDescription: "Expert construction services that bring your designs to life with precision, quality, and efficiency — from ground-breaking to handover.",
-    icon: Hammer,
+    icon: "Hammer",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=professional%20construction%20site%20modern%20building%20premium&image_size=landscape_16_9",
     benefits: [
       "Experienced construction team",
@@ -173,7 +198,7 @@ export const SERVICES: Service[] = [
     title: "Project Planning & Project Management",
     shortDescription: "Managing projects from concept through completion with quality, cost control, and timely delivery.",
     heroDescription: "Comprehensive project planning and management services that keep your project on time, on budget, and to the highest standards.",
-    icon: ClipboardList,
+    icon: "ClipboardList",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=project%20management%20construction%20professional%20meeting&image_size=landscape_16_9",
     benefits: [
       "Project planning and scheduling",
@@ -212,7 +237,7 @@ export const SERVICES: Service[] = [
     title: "Highway Engineering",
     shortDescription: "Designing and supervising road infrastructure for safe and efficient transportation.",
     heroDescription: "Expert highway and road engineering services that support safe, sustainable, and efficient transportation systems across Uganda and East Africa.",
-    icon: Route,
+    icon: "Route",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=modern%20highway%20road%20engineering%20infrastructure%20aerial&image_size=landscape_16_9",
     benefits: [
       "Road and highway design",
@@ -251,7 +276,7 @@ export const SERVICES: Service[] = [
     title: "Geotechnical Engineering",
     shortDescription: "Geotechnical investigations and foundation recommendations for safe construction.",
     heroDescription: "Professional geotechnical services that ensure your structures are built on solid ground through thorough site investigation and analysis.",
-    icon: Mountain,
+    icon: "Mountain",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=geotechnical%20soil%20investigation%20drilling%20professional&image_size=landscape_16_9",
     benefits: [
       "Soil and site investigations",
@@ -290,7 +315,7 @@ export const SERVICES: Service[] = [
     title: "Surveying",
     shortDescription: "Accurate measurements and mapping for successful project planning and execution.",
     heroDescription: "Professional surveying services that provide the precise measurements, mapping, and geospatial data your project needs.",
-    icon: Ruler,
+    icon: "Ruler",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=professional%20land%20surveying%20equipment%20total%20station&image_size=landscape_16_9",
     benefits: [
       "Topographical surveys",
@@ -329,7 +354,7 @@ export const SERVICES: Service[] = [
     title: "Electrical & Mechanical Engineering",
     shortDescription: "Efficient electrical and mechanical engineering solutions for modern buildings and facilities.",
     heroDescription: "Delivering reliable electrical and mechanical engineering services that power, condition, and automate modern buildings and industrial facilities.",
-    icon: Zap,
+    icon: "Zap",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=electrical%20mechanical%20engineering%20modern%20building%20systems&image_size=landscape_16_9",
     benefits: [
       "Electrical installations and power distribution",
@@ -368,7 +393,7 @@ export const SERVICES: Service[] = [
     title: "Water Supply & Sanitation Engineering",
     shortDescription: "Sustainable water supply and sanitation systems for public health and environmental protection.",
     heroDescription: "Designing and implementing sustainable water supply, sewerage, and sanitation systems that improve public health and protect the environment.",
-    icon: Droplets,
+    icon: "Droplets",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=water%20supply%20sanitation%20engineering%20treatment%20plant&image_size=landscape_16_9",
     benefits: [
       "Water supply system design",
@@ -407,7 +432,7 @@ export const SERVICES: Service[] = [
     title: "Environmental Engineering",
     shortDescription: "Environmentally responsible engineering solutions for sustainable infrastructure.",
     heroDescription: "Developing environmentally responsible engineering solutions that support sustainable development, regulatory compliance, and ecosystem protection.",
-    icon: Globe,
+    icon: "Globe",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=environmental%20engineering%20sustainable%20green%20infrastructure&image_size=landscape_16_9",
     benefits: [
       "Environmental impact assessments (EIA)",
@@ -446,7 +471,7 @@ export const SERVICES: Service[] = [
     title: "Interior Design & Finishing",
     shortDescription: "Elegant, functional interior spaces that enhance comfort, productivity, and aesthetics.",
     heroDescription: "Creating beautiful and functional interior spaces that reflect your personality and brand, from concept through to final finishing touches.",
-    icon: Paintbrush,
+    icon: "Paintbrush",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=modern%20interior%20design%20luxury%20minimalist&image_size=landscape_16_9",
     benefits: [
       "Interior design and space planning",
@@ -485,7 +510,7 @@ export const SERVICES: Service[] = [
     title: "Renovation & Remodeling",
     shortDescription: "Revitalize existing buildings with professional renovation and remodeling solutions.",
     heroDescription: "Expert renovation and remodeling services that breathe new life into existing spaces, increase property value, and extend building life.",
-    icon: RefreshCw,
+    icon: "RefreshCw",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=home%20renovation%20modern%20before%20after%20premium&image_size=landscape_16_9",
     benefits: [
       "Full-scale building renovations",
@@ -524,7 +549,7 @@ export const SERVICES: Service[] = [
     title: "Construction Supervision & Quality Assurance",
     shortDescription: "Ensuring every project meets specifications, safety requirements, and quality standards.",
     heroDescription: "Comprehensive supervision and quality assurance services that ensure your project is built right — to specification, on time, and to the highest standards.",
-    icon: Eye,
+    icon: "Eye",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=construction%20supervision%20site%20inspection%20professional&image_size=landscape_16_9",
     benefits: [
       "Site supervision and inspections",
@@ -563,7 +588,7 @@ export const SERVICES: Service[] = [
     title: "Smart Building Consulting",
     shortDescription: "Integrating modern technologies for improved efficiency, automation, and sustainability.",
     heroDescription: "Helping you integrate cutting-edge smart technologies into your buildings for enhanced efficiency, automation, sustainability, and operational performance.",
-    icon: Cpu,
+    icon: "Cpu",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=smart%20building%20technology%20home%20automation%20modern&image_size=landscape_16_9",
     benefits: [
       "Smart building and home automation",
@@ -602,7 +627,7 @@ export const SERVICES: Service[] = [
     title: "Sustainable Design",
     shortDescription: "Environmentally responsible buildings that minimize energy consumption and maximize efficiency.",
     heroDescription: "Designing environmentally responsible buildings that minimize energy consumption, reduce carbon footprint, and maximize long-term operational efficiency.",
-    icon: Leaf,
+    icon: "Leaf",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=sustainable%20green%20building%20eco%20friendly%20design&image_size=landscape_16_9",
     benefits: [
       "Green building design and certification",
@@ -641,7 +666,7 @@ export const SERVICES: Service[] = [
     title: "General Material Supply",
     shortDescription: "Reliable sourcing and supply of quality construction materials for every project.",
     heroDescription: "Reliable sourcing and supply of quality construction materials, ensuring your project is built with durable, certified, and cost-effective products.",
-    icon: Truck,
+    icon: "Truck",
     imagePlaceholder: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=construction%20material%20supply%20warehouse%20logistics&image_size=landscape_16_9",
     benefits: [
       "Cement, steel, and aggregate supply",

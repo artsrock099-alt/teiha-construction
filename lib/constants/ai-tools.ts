@@ -9,6 +9,21 @@ import {
   Maximize,
 } from "lucide-react";
 
+const AI_ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Calculator,
+  LayoutTemplate,
+  Warehouse,
+  Leaf,
+  Sparkles,
+  CalendarCheck,
+  MapPin,
+  Maximize,
+};
+
+export function getAIToolIcon(name: string): React.ComponentType<{ className?: string }> | undefined {
+  return AI_ICON_MAP[name];
+}
+
 export type Status = "Available" | "Beta" | "Coming Soon";
 
 export interface AITool {
@@ -17,7 +32,7 @@ export interface AITool {
   category: string;
   shortDescription: string;
   detailedDescription: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: string;
   heroIllustration: string;
   supportedUseCases: string[];
   keyBenefits: string[];
@@ -49,7 +64,7 @@ export const AI_TOOLS: AITool[] = [
     shortDescription: "Get accurate, AI-powered cost estimates in minutes instead of weeks.",
     detailedDescription:
       "Our AI Building Cost Estimator uses machine learning to analyze thousands of similar projects and provide accurate cost breakdowns tailored to your location, materials, and design requirements.",
-    icon: Calculator,
+    icon: "Calculator",
     heroIllustration:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=architectural%20cost%20calculator%20interface%20modern%20minimal&image_size=landscape_16_9",
     supportedUseCases: [
@@ -128,7 +143,7 @@ export const AI_TOOLS: AITool[] = [
     shortDescription: "Generate multiple floor plan concepts in seconds with AI.",
     detailedDescription:
       "Explore dozens of floor plan variations based on your requirements, from residential homes to commercial spaces.",
-    icon: LayoutTemplate,
+    icon: "LayoutTemplate",
     heroIllustration:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=architectural%20floor%20plan%20design%20minimal&image_size=landscape_16_9",
     supportedUseCases: [
@@ -192,7 +207,7 @@ export const AI_TOOLS: AITool[] = [
     shortDescription: "Get AI-powered recommendations for sustainable, cost-effective materials.",
     detailedDescription:
       "Our AI Material Advisor analyzes your project requirements and recommends materials that balance cost, sustainability, durability, and aesthetics.",
-    icon: Warehouse,
+    icon: "Warehouse",
     heroIllustration:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=sustainable%20building%20materials%20modern%20minimal&image_size=landscape_16_9",
     supportedUseCases: [
@@ -260,7 +275,7 @@ export const AI_TOOLS: AITool[] = [
     shortDescription: "Optimize your building's environmental performance.",
     detailedDescription:
       "Analyze energy efficiency, water usage, carbon footprint, and sustainability metrics using AI-powered simulations.",
-    icon: Leaf,
+    icon: "Leaf",
     heroIllustration:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=sustainability%20building%20analysis%20green%20minimal&image_size=landscape_16_9",
     supportedUseCases: [
@@ -324,7 +339,7 @@ export const AI_TOOLS: AITool[] = [
     shortDescription: "Discover architectural design references tailored to your project.",
     detailedDescription:
       "Find inspiration from thousands of curated projects, filtered by style, location, building type, and more.",
-    icon: Sparkles,
+    icon: "Sparkles",
     heroIllustration:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=architectural%20design%20inspiration%20moodboard%20minimal&image_size=landscape_16_9",
     supportedUseCases: [
@@ -388,7 +403,7 @@ export const AI_TOOLS: AITool[] = [
     shortDescription: "Optimize construction schedules, resource allocation, and timelines.",
     detailedDescription:
       "Create realistic construction schedules, identify potential bottlenecks, and optimize resource allocation with AI.",
-    icon: CalendarCheck,
+    icon: "CalendarCheck",
     heroIllustration:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=construction%20schedule%20gantt%20chart%20minimal&image_size=landscape_16_9",
     supportedUseCases: [
@@ -456,7 +471,7 @@ export const AI_TOOLS: AITool[] = [
     shortDescription: "AI-powered site analysis for better design decisions.",
     detailedDescription:
       "Analyze site conditions including topography, solar access, wind patterns, views, and regulatory constraints.",
-    icon: MapPin,
+    icon: "MapPin",
     heroIllustration:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=site%20analysis%20map%20topography%20architectural&image_size=landscape_16_9",
     supportedUseCases: [
@@ -520,7 +535,7 @@ export const AI_TOOLS: AITool[] = [
     shortDescription: "Maximize the efficiency and usability of your space.",
     detailedDescription:
       "AI-powered space optimization to maximize functionality, flow, and usability of any space.",
-    icon: Maximize,
+    icon: "Maximize",
     heroIllustration:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=space%20optimization%20floor%20plan%20minimal&image_size=landscape_16_9",
     supportedUseCases: [
