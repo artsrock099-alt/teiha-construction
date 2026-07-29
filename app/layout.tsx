@@ -57,6 +57,7 @@ export default function RootLayout({
           }}
         />
         {/* Icons & PWA */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
         {/* DNS Prefetch & Preconnect */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
