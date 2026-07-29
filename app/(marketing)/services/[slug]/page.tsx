@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Section, SectionHeader } from "@/components/ui/section";
@@ -10,38 +11,13 @@ import { SERVICES, getServiceBySlug, getIcon } from "@/lib/constants/services";
 import { SITE_CONFIG } from "@/lib/constants";
 import { FadeUp } from "@/lib/animations";
 
-export async function generateStaticParams() {
-  return SERVICES.map((service) => ({
-    slug: service.slug,
-  }));
-}
-
-export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await props.params;
-  const service = getServiceBySlug(slug);
-  if (!service) return {};
-
-  return {
-    title: service.seo.title || `${service.title} | ${SITE_CONFIG.name}`,
-    description: service.seo.description || service.shortDescription,
-    keywords: service.seo.keywords?.join(", "),
-    openGraph: {
-      title: service.seo.title || `${service.title} | ${SITE_CONFIG.name}`,
-      description: service.seo.description || service.shortDescription,
-      images: [{ url: service.imagePlaceholder, width: 1200, height: 630 }],
-    },
-    alternates: {
-      canonical: `${SITE_CONFIG.url}/services/${service.slug}`,
-    },
-  };
-}
-
-export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default function ServicePage() {
+  const params = useParams();
+  const slug = params.slug as string;
   const service = getServiceBySlug(slug);
 
   if (!service) {
-    notFound();
+    return <div className="pt-40 text-center text-body">Service not found</div>;
   }
 
   const relatedServices = service.relatedServices
