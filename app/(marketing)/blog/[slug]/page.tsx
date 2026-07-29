@@ -40,8 +40,9 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   };
 }
 
-export default function BlogArticlePage({ params }: { params: { slug: string } }) {
-  const article = getBlogArticleBySlug(params.slug);
+export default async function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const article = getBlogArticleBySlug(slug);
 
   if (!article) {
     notFound();
