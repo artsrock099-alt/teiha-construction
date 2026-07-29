@@ -88,24 +88,16 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Careers", href: "/careers" },
-    { name: "Press", href: "/press" },
   ],
   services: [
+    { name: "View All Services", href: "/services" },
     { name: "Architecture", href: "/services/architecture" },
     { name: "Civil & Structural Engineering", href: "/services/civil-engineering" },
     { name: "Construction", href: "/services/construction" },
     { name: "Project Management", href: "/services/project-management" },
-    { name: "Highway Engineering", href: "/services/highway-engineering" },
-    { name: "Interior Design", href: "/services/interior-design" },
   ],
   resources: [
     { name: "Blog", href: "/blog" },
-    { name: "Guides", href: "/resources/guides" },
-    { name: "Case Studies", href: "/resources/case-studies" },
   ],
-  legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-  ],
+  legal: [],
 };

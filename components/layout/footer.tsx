@@ -12,36 +12,28 @@ export function Footer() {
       title: "Company",
       links: [
         { name: "About Us", href: "/about" },
-        { name: "Careers", href: "/careers" },
-        { name: "Press", href: "/press" },
       ],
     },
     {
       title: "Services",
       links: [
+        { name: "All Services", href: "/services" },
         { name: "Architecture", href: "/services/architecture" },
         { name: "Civil & Structural Eng.", href: "/services/civil-engineering" },
         { name: "Construction", href: "/services/construction" },
-        { name: "Interior Design", href: "/services/interior-design" },
         { name: "Project Management", href: "/services/project-management" },
-        { name: "Highway Engineering", href: "/services/highway-engineering" },
       ],
     },
     {
       title: "AI Studio",
       links: [
         { name: "Overview", href: "/ai-studio" },
-        { name: "Budget Calculator", href: "/ai-studio/budget" },
-        { name: "Site Assessment", href: "/ai-studio/assessment" },
-        { name: "Design Generator", href: "/ai-studio/design" },
       ],
     },
     {
       title: "Resources",
       links: [
         { name: "Blog", href: "/blog" },
-        { name: "Guides", href: "/resources/guides" },
-        { name: "Case Studies", href: "/resources/case-studies" },
       ],
     },
   ];
@@ -158,19 +150,8 @@ export function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-white/10 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs md:text-sm text-white/60 text-center md:text-left">
-            © {new Date().getFullYear()} TEI-HA Construction Services. All rights reserved.
+            © {new Date().getFullYear()} TEI-HA Construction Services Ltd. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm text-white/60">
-            <Link href="/privacy" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-white">
-              Terms of Service
-            </Link>
-            <Link href="/cookies" className="hover:text-white">
-              Cookie Policy
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

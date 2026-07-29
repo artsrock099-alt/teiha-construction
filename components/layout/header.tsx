@@ -178,13 +178,25 @@ function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
         {NAV_LINKS.map((link) => (
           <div key={link.name} className="py-2">
             {link.hasMegaMenu ? (
-              <button
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="w-full text-left flex items-center justify-between text-lg font-medium text-primary"
-              >
-                {link.name}
-                <span>{isServicesOpen ? "-" : "+"}</span>
-              </button>
+              <div className="flex items-center justify-between">
+                <Link
+                  href={link.href}
+                  onClick={onClose}
+                  className="text-lg font-medium text-primary"
+                >
+                  {link.name}
+                </Link>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsServicesOpen(!isServicesOpen);
+                  }}
+                  className="p-2 text-primary"
+                  aria-label={isServicesOpen ? "Collapse services" : "Expand services"}
+                >
+                  <span>{isServicesOpen ? "-" : "+"}</span>
+                </button>
+              </div>
             ) : (
               <Link
                 href={link.href}
