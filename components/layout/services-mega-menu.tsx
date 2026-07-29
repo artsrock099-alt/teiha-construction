@@ -18,6 +18,7 @@ import {
   Leaf,
   Truck,
 } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 const SERVICES = [
   {
