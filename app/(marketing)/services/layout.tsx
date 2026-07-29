@@ -4,7 +4,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Our Services | Architecture, Engineering & Construction | TEI-HA",
   description:
-    "Comprehensive architecture, civil engineering, construction, interior design, and project management services in Uganda. AI-powered solutions delivering international quality standards.",
+    "Explore TEI-HA Construction Services Ltd's full portfolio of 16 professional services: architectural design, civil & structural engineering, construction, project management, highway engineering, geotechnical engineering, surveying, MEP, water supply, environmental engineering, interior design, renovation, supervision, smart building, sustainable design, and material supply.",
   keywords: [
     "Construction Services Uganda",
     "Architecture Services Kampala",
@@ -12,11 +12,21 @@ export const metadata: Metadata = {
     "Interior Design Uganda",
     "Project Management Uganda",
     "Building Contractors Uganda",
+    "Highway Engineering Uganda",
+    "Geotechnical Engineering Uganda",
+    "Surveying Uganda",
+    "MEP Engineering Uganda",
+    "Water Supply Uganda",
+    "Environmental Engineering Uganda",
+    "Renovation Uganda",
+    "Smart Building Uganda",
+    "Sustainable Design Uganda",
+    "Construction Materials Uganda",
   ],
   openGraph: {
     title: "Our Services | TEI-HA Construction Services Ltd",
     description:
-      "Explore our full range of AI-powered architecture, engineering, and construction services across Uganda and East Africa.",
+      "TEI-HA offers 16 comprehensive professional services spanning architecture, engineering, construction, consultancy, and material supply across Uganda and East Africa.",
   },
 };
 

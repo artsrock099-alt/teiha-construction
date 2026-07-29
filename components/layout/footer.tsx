@@ -20,11 +20,11 @@ export function Footer() {
       title: "Services",
       links: [
         { name: "Architecture", href: "/services/architecture" },
+        { name: "Civil & Structural Eng.", href: "/services/civil-engineering" },
         { name: "Construction", href: "/services/construction" },
         { name: "Interior Design", href: "/services/interior-design" },
-        { name: "Engineering", href: "/services/engineering" },
-        { name: "Renovation", href: "/services/renovation" },
         { name: "Project Management", href: "/services/project-management" },
+        { name: "Highway Engineering", href: "/services/highway-engineering" },
       ],
     },
     {

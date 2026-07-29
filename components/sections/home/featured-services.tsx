@@ -4,44 +4,44 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { FeatureGrid } from "@/components/layouts/feature-grid";
 import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/cards/service-card";
-import { Layout, PenTool, Home, HardHat, Hammer, FolderTree } from "lucide-react";
+import { Building2, Compass, Hammer, Route, Globe, Leaf } from "lucide-react";
 
 const SERVICES = [
   {
-    icon: <Layout />,
-    title: "Architecture",
+    icon: <Building2 />,
+    title: "Architectural Design",
     description: "Premium architectural design with a focus on sustainability and innovation.",
     href: "/services/architecture",
   },
   {
-    icon: <PenTool />,
-    title: "Interior Design",
-    description: "Elegant, functional interior spaces tailored to your lifestyle.",
-    href: "/services/interior-design",
-  },
-  {
-    icon: <HardHat />,
-    title: "Engineering",
-    description: "Structural and civil engineering with rigorous quality standards.",
-    href: "/services/engineering",
+    icon: <Compass />,
+    title: "Civil & Structural Engineering",
+    description: "Structural analysis, foundation engineering, and infrastructure design.",
+    href: "/services/civil-engineering",
   },
   {
     icon: <Hammer />,
-    title: "Construction",
+    title: "Construction Services",
     description: "World-class construction using modern methods and materials.",
     href: "/services/construction",
   },
   {
-    icon: <FolderTree />,
-    title: "Project Management",
-    description: "Comprehensive project management from concept to completion.",
-    href: "/services/project-management",
+    icon: <Route />,
+    title: "Highway Engineering",
+    description: "Road and highway infrastructure design and supervision.",
+    href: "/services/highway-engineering",
   },
   {
-    icon: <Home />,
-    title: "Renovation",
-    description: "Modern renovation services to transform existing spaces.",
-    href: "/services/renovation",
+    icon: <Globe />,
+    title: "Environmental Engineering",
+    description: "EIA, waste management, and sustainable infrastructure planning.",
+    href: "/services/environmental-engineering",
+  },
+  {
+    icon: <Leaf />,
+    title: "Sustainable Design",
+    description: "Eco-friendly, energy-efficient building design solutions.",
+    href: "/services/sustainable-design",
   },
 ];
 

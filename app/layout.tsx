@@ -57,7 +57,6 @@ export default function RootLayout({
           }}
         />
         {/* Icons & PWA */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
         {/* DNS Prefetch & Preconnect */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />

@@ -8,6 +8,55 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Image Lightbox Modal
+function ImageLightbox({ imageUrl, title, onClose }: { imageUrl: string; title: string; onClose: () => void }) {
+  React.useEffect(() => {
+    document.body.style.overflow = "hidden";
+    const handleKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", handleKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKey);
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/95 backdrop-blur-sm" />
+      <motion.div
+        initial={{ scale: 0.85, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.85, opacity: 0 }}
+        transition={{ type: "spring", damping: 25, stiffness: 300 }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-6xl max-h-[90vh] flex items-center justify-center"
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+          aria-label="Close image viewer"
+        >
+          <X className="w-6 h-6" />
+        </button>
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={1200}
+          height={800}
+          className="w-auto h-auto max-w-full max-h-[85vh] object-contain rounded-lg"
+          priority
+        />
+      </motion.div>
+    </motion.div>
+  );
+}
+
 // Featured projects data
 const FEATURED_PROJECTS = [
   {
@@ -177,10 +226,12 @@ function ProjectCard({
   project, 
   index,
   onPdfClick,
+  onImageClick,
 }: { 
   project: typeof FEATURED_PROJECTS[0]; 
   index: number;
   onPdfClick: (url: string) => void;
+  onImageClick: (url: string, title: string) => void;
 }) {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -20]);
@@ -194,6 +245,8 @@ function ProjectCard({
   const handleClick = () => {
     if (project.isPdf) {
       onPdfClick(project.imageUrl);
+    } else {
+      onImageClick(project.imageUrl, project.title);
     }
   };
 
@@ -248,10 +301,12 @@ function ProjectCard({
 // Carousel component
 function Carousel({ 
   title, 
-  projects 
+  projects,
+  onImageClick,
 }: { 
   title: string; 
-  projects: Array<{ imageUrl?: string; videoUrl?: string }> 
+  projects: Array<{ imageUrl?: string; videoUrl?: string }>;
+  onImageClick: (url: string, title: string) => void;
 }) {
   // Duplicate projects for seamless infinite scroll
   const duplicatedProjects = [...projects, ...projects];
@@ -274,6 +329,7 @@ function Carousel({
             <div
               key={idx}
               className="flex-shrink-0 w-64 group cursor-pointer"
+              onClick={() => project.imageUrl && onImageClick(project.imageUrl, title)}
             >
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                 {project.videoUrl ? (
@@ -305,10 +361,14 @@ function Carousel({
 
 export function FeaturedProjects() {
   const [pdfUrl, setPdfUrl] = React.useState<string | null>(null);
+  const [lightbox, setLightbox] = React.useState<{ imageUrl: string; title: string } | null>(null);
+
+  const handleImageClick = (imageUrl: string, title: string) => setLightbox({ imageUrl, title });
 
   return (
     <>
       {pdfUrl && <PdfModal pdfUrl={pdfUrl} onClose={() => setPdfUrl(null)} />}
+      {lightbox && <ImageLightbox imageUrl={lightbox.imageUrl} title={lightbox.title} onClose={() => setLightbox(null)} />}
       <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         {/* Editorial Introduction */}
@@ -344,16 +404,16 @@ export function FeaturedProjects() {
         {/* Premium Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {FEATURED_PROJECTS.map((project, idx) => (
-            <ProjectCard key={idx} project={project} index={idx} onPdfClick={setPdfUrl} />
+            <ProjectCard key={idx} project={project} index={idx} onPdfClick={setPdfUrl} onImageClick={handleImageClick} />
           ))}
         </div>
 
         {/* Category Carousels */}
         <div className="mb-24">
-          <Carousel title="Residential" projects={RESIDENTIAL_PROJECTS} />
-          <Carousel title="Commercial" projects={COMMERCIAL_PROJECTS} />
-          <Carousel title="Hospitality" projects={HOSPITALITY_PROJECTS} />
-          <Carousel title="Industrial" projects={INDUSTRIAL_PROJECTS} />
+          <Carousel title="Residential" projects={RESIDENTIAL_PROJECTS} onImageClick={handleImageClick} />
+          <Carousel title="Commercial" projects={COMMERCIAL_PROJECTS} onImageClick={handleImageClick} />
+          <Carousel title="Hospitality" projects={HOSPITALITY_PROJECTS} onImageClick={handleImageClick} />
+          <Carousel title="Industrial" projects={INDUSTRIAL_PROJECTS} onImageClick={handleImageClick} />
         </div>
 
         {/* Final CTA */}
