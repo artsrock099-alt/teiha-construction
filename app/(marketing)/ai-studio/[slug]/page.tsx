@@ -72,7 +72,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
           }),
         }}
       />
-      <ToolPageClient tool={tool} />
+      <ToolPageClient tool={{ ...tool, icon: undefined as unknown as React.ComponentType }} />
     </>
   );
 }

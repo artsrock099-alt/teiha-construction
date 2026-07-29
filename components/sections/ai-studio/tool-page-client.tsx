@@ -23,11 +23,12 @@ const statusToVariant = (status: Status) => {
 };
 
 interface ToolPageClientProps {
-  tool: AITool;
+  tool: Omit<AITool, "icon"> & { slug: string };
 }
 
 export function ToolPageClient({ tool }: ToolPageClientProps) {
-  const Icon = tool.icon;
+  const toolData = AI_TOOLS.find((t) => t.slug === tool.slug);
+  const Icon = toolData?.icon;
   const relatedTools = tool.relatedTools
     .map((slug) => AI_TOOLS.find((t) => t.slug === slug))
     .filter(Boolean);
@@ -41,7 +42,7 @@ export function ToolPageClient({ tool }: ToolPageClientProps) {
           <div className="max-w-4xl mb-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                <Icon className="h-7 w-7 text-primary" />
+                {Icon ? <Icon className="h-7 w-7 text-primary" /> : <div className="h-7 w-7" />}
               </div>
               <Badge variant={statusToVariant(tool.status)}>{tool.status}</Badge>
             </div>
