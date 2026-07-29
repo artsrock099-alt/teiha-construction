@@ -38,6 +38,9 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
     notFound();
   }
 
+  // Strip the non-serializable icon before passing to client component
+  const { icon: _icon, ...toolProps } = tool;
+
   return (
     <>
       <script
@@ -72,7 +75,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
           }),
         }}
       />
-      <ToolPageClient tool={{ ...tool, icon: undefined as unknown as React.ComponentType }} />
+      <ToolPageClient tool={toolProps} />
     </>
   );
 }
